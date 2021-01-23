@@ -4,10 +4,10 @@
             <a href="" class="contact">&nbsp;<i class="fas fa-phone-volume"></i> 017123457654&nbsp;</a>
             <a href="" class="email">&nbsp;<i class="fas fa-envelope-open-text"></i> primemed@gmail.com&nbsp;</a>
             <div class="search-btn">
-            <form class="form-inline">
-                    <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-            </form>
+                <form class="form-inline">
+                        <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>
             </div>
     </div>
     </div>
@@ -42,14 +42,7 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="{{action('User\OrderCategoryController@order_category')}}">order category <i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="{{action('User\OrderCategoryController@medicine')}}">medicine</a></li>
-                                    <li><a href="">baby care</a></li>
-                                    <li><a href="">feminine hygiene</a></li>
-                                    <li><a href="">medical equipment</a></li>
-                                    <li><a href="">other</a></li>
-                                </ul>
+                            <li><a href="{{action('User\OrderCategoryController@order_category')}}">shop</a>
                             </li>
                             <li><a href="">lab info <i class="fas fa-chevron-down"></i></a>
                                 <ul>

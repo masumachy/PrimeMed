@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\User;
 use App\Department;
+use App\ProductCategory;
 use App\AllLab;
 use App\LabInfo;
 use App\LabReport;

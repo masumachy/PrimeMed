@@ -61,6 +61,11 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('update-product/{id}','Admin\ProductController@update_product');
     Route::post('update-product','Admin\ProductController@update');
     Route::get('delete-product/{id}','Admin\ProductController@delete');
+    /*--------------------------Order with Prescription--------------------------- */
+    Route::get('order-with-prescription','Admin\OrderController@prescription_list');
+    Route::get('delete-prescription-list/{id}','Admin\OrderController@delete');
+    Route::get('order-with-name','Admin\OrderController@medicine_name_list');
+    Route::get('delete-name-list/{id}','Admin\OrderController@deleteName');
     /*----------------------All-Lab--------------------- */
     Route::get('all-lab-list','Admin\AllLabController@lab_list');
     Route::get('create-lab','Admin\AllLabController@create_lab');
@@ -97,8 +102,14 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('department/{id}/{slug}','User\DoctorController@dept_wise');
     Route::get('sub-department/{id}/{slug}','User\DoctorController@sub_dept_wise');
     /*--------------------orderCategory-------------------- */
+    Route::get('all-product','User\OrderCategoryController@all_product');
+    Route::get('category-wise-product/{id}','User\OrderCategoryController@category_wise');
+    Route::get('search','User\OrderCategoryController@itemSearch');
     Route::get('order-category','User\OrderCategoryController@order_category');
-    Route::get('medicine','User\OrderCategoryController@medicine');
+    Route::get('order-form','User\OrderCategoryController@order_form');
+    Route::post('save-order','User\OrderCategoryController@save');
+    Route::post('save-order-Name','User\OrderCategoryController@saveName');
+    Route::get('checkout-details','User\OrderCategoryController@checkout_details');
     /*----------------------Laboratory---------------------- */
     Route::get('lab/{id}/{slug}','User\LaboratoryController@lab');
     Route::get('lab-report','User\LaboratoryController@lab_report');

@@ -25,5 +25,6 @@
     <script src="{{asset('public/user_asset')}}/js/bootstrap.min.js"></script>
     <script src="{{asset('public/user_asset')}}/js/owl.carousel.min.js"></script>
     <script src="{{asset('public/user_asset')}}/js/main.js"></script>
+    @yield('script')
 </body>
 </html>

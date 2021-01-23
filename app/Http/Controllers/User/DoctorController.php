@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 use App\Doctor;
 use App\Department;
+use App\ProductCategory;
 use App\SubDepartment;
 use App\Appointment;
 use App\AllLab;

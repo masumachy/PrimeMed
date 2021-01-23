@@ -37,10 +37,10 @@
                                 <a href="{{action('Admin\ProductController@list')}}" class=" waves-effect waves-block">Product</a>
                             </li>
                             <li>
-                                <a href="pages/forms/basic-form-elements.html" class=" waves-effect waves-block">New</a>
+                                <a href="{{action('Admin\OrderController@prescription_list')}}" class=" waves-effect waves-block">Order With Prescription</a>
                             </li>
                             <li>
-                                <a href="pages/forms/advanced-form-elements.html" class=" waves-effect waves-block">Processing</a>
+                                <a href="{{action('Admin\OrderController@medicine_name_list')}}" class=" waves-effect waves-block">Order With Medicine Details</a>
                             </li>
                             <li>
                                 <a href="pages/forms/form-examples.html" class=" waves-effect waves-block">Complete</a>
@@ -69,7 +69,7 @@
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
-                            <i class="material-icons">info</i>
+                            <i class="material-icons">bug_report</i>
                             <span>Lab Report</span>
                         </a>
                         <ul class="ml-menu">
