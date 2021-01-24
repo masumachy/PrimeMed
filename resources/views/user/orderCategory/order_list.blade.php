@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="order-category text-center pt-30">
-                <h3 class="text-center">Medicine <a href=""><i class="fas fa-cart-plus"></i></a></h3>
+                <h3 class="text-center">Medicine <a href="#"><i class="fas fa-cart-plus"></i> <span id="cart_item"></span></a></h3>
                <input type="search" id="searchItem" placeholder="Search a Medicine" data-url="{{action('User\OrderCategoryController@itemSearch')}}">
                 
                 <p class="text-center"> Drugs listed by brand generic name starting with the letter</p>
@@ -194,10 +194,68 @@
                 $.each(result, function( i, row ) {
     
     
-                    showData += '<div class="col-xl-4"><div class="sub-order text-center"><img src="../public/uploads/product/'+row.imageName+'" alt=""><h4>name: <span>'+row.name+'</span></h4><h4>type: <span>'+row.group+'</span></h4><h4>dose: <span>'+row.dose+'</span></h4><h4>price: <span>TK. '+row.price+' (per pata)</span></h4><h4><a href=""><i class="fas fa-minus"></i></a><span>0(pata)</span><a href=""><i class="fas fa-plus"></i></a></h4></div></div>'
+                    showData += '<div class="col-xl-4"><div class="sub-order text-center"><img src="../public/uploads/product/'+row.imageName+'" alt=""><h4>name: <span>'+row.name+'</span></h4><h4>type: <span>'+row.group+'</span></h4><h4>dose: <span>'+row.dose+'</span></h4><h4>price: <span>TK. '+row.price+' (per pata)</span></h4><h4><a class="cart_minus" href="#" data-id="'+row.id+'" data-price="'+row.price+'"><i class="fas fa-minus"></i></a><span>0(pata)</span><a data-id="'+row.id+'" data-price="'+row.price+'" class="cart_plus" href=""><i class="fas fa-plus"></i></a></h4></div></div>'
                 });
                 $('#productLoad').html(showData);
+                cart();
             });
         }
+
+        function cart(){
+                    $('.cart_plus').click(function(e){
+                        e.preventDefault();
+                        var id = $(this).data('id');
+                        var price = $(this).data('price');
+                        add_cart(id, price);
+                    });
+                    $('.cart_minus').click(function(e){
+                        e.preventDefault();
+                        var id = $(this).data('id');
+                        var price = $(this).data('price');
+                        remove_cart(id, price);
+                    });
+        }
+        function add_cart(id, price) {
+            $.ajax({
+                url: "{{action('User\CartController@add_cart')}}",
+                type: 'GET',
+                data: {productID:id, price:price},
+                success:function(result){
+                    console.log(result);
+                    showcartintop();
+                  //  temp_count();
+                },
+                error: function (jXHR, textStatus, errorThrown) {html("")}
+            });
+        }
+
+        function remove_cart(id) {
+            $.ajax({
+                url: "{{action('User\CartController@remove_cart')}}",
+                type: 'GET',
+                data: {productID:id},
+                success:function(result){
+                    console.log(result);
+                    showcartintop();
+                   // temp_count();
+                },
+                error: function (jXHR, textStatus, errorThrown) {html("")}
+            });
+        }
+
+        function showcartintop(){
+            $.ajax({
+                url : "{{action('User\CartController@get_temp_order')}}",
+                type : 'GET',
+                success : function(data){
+                    if(data > 0){
+                        $('#cart_item').html('[ '+data+' ]');
+                    }else{
+                        $('#cart_item').html('[ 0 ]');
+                    }
+                }
+            });
+        }
+        showcartintop();
 </script>
 @endsection

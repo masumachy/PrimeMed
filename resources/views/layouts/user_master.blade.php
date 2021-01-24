@@ -26,5 +26,14 @@
     <script src="{{asset('public/user_asset')}}/js/owl.carousel.min.js"></script>
     <script src="{{asset('public/user_asset')}}/js/main.js"></script>
     @yield('script')
+    <script>
+        //############################# COOKIE GENERATE #############################
+            @if (!Session::has('unique_session'))
+            $(function () {
+                $.get( "{{action('User\HomeController@gen_session')}}" );
+            });
+            @endif
+        //#####################################################################################
+    </script>
 </body>
 </html>

@@ -116,9 +116,16 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('save-lab-report','User\LaboratoryController@save');
     /*----------------------Services---------------------- */
     Route::get('services','User\ServicesController@services');
+
+    //========== Temp Orders==============
+    Route::get('add_cart', 'User\CartController@add_cart');
+    Route::get('remove_cart', 'User\CartController@remove_cart');
+    Route::get('get_temp_order', 'User\CartController@get_temp_order');
     
 });
 
 Auth::routes();
 
+Route::get('gen_session', 'User\HomeController@gen_session');//Unique Session Generate
+Route::get('remove_session', 'User\HomeController@remove_session');//Unique Session Remove
 Route::get('/home', 'HomeController@index')->name('home');

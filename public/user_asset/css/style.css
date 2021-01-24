@@ -676,7 +676,7 @@ ul{
     font-weight: 500;
     padding-left: 3px;
 }
-.sub-order h4 a i {
+.sub-order h4 a i, .sub-order h4 button i {
     font-size: 15px;
     margin: 0px 10px;
     border: 1px solid #abafb3;
