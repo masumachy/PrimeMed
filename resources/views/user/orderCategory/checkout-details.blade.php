@@ -137,8 +137,16 @@
                         <div class="col-xl-6">
                             <div class="box">
                                 <h2>cart total</h2>
+                                @php
+                                    $sub_total = 0;
+                                @endphp
+                            @foreach($carts as $row)
+                                @php
+                                    $sub_total += ($row->price * $row->quantity);
+                                @endphp
+                            @endforeach
                                     <label class="form-check-label" for="inlineRadio1">subtotal</label>
-                                    <label class="form-check-label" for="inlineRadio2">tk 613.00</label>
+                                    <label class="form-check-label" for="inlineRadio2">{{money($sub_total)}}</label>
                             </div>
                         </div>
                         <div class="col-xl-6">

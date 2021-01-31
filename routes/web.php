@@ -110,6 +110,9 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('save-order','User\OrderCategoryController@save');
     Route::post('save-order-Name','User\OrderCategoryController@saveName');
     Route::get('checkout-details','User\OrderCategoryController@checkout_details');
+    Route::get('cart-table','User\OrderCategoryController@cart_table');
+    Route::get('cart-table/all-delete','User\OrderCategoryController@all_cart_delete');
+    Route::get('cart-table/delete/{id}','User\OrderCategoryController@cart_delete');
     /*----------------------Laboratory---------------------- */
     Route::get('lab/{id}/{slug}','User\LaboratoryController@lab');
     Route::get('lab-report','User\LaboratoryController@lab_report');

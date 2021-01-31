@@ -5,9 +5,11 @@ use App\Department;
 use App\ProductCategory;
 use App\Product;
 use App\AllLab;
+use App\TempOrder;
 use App\OrderFormPrescription;
 use App\OrderWithName;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use App\Http\Controllers\Controller;
 
 class OrderCategoryController extends Controller
@@ -24,6 +26,7 @@ class OrderCategoryController extends Controller
         $labs = AllLab::all();
         return view('user.orderCategory.order-form',compact('depts','labs'));
     }
+    
     public function save(Request $request){
         $request->validate([
             'name' => 'required',
@@ -69,8 +72,26 @@ class OrderCategoryController extends Controller
     public function checkout_details(){
         $depts = Department::all();
         $labs = AllLab::all();
-        return view('user.orderCategory.checkout-details',compact('depts','labs'));
+        $carts = TempOrder::where('sessionId', Cookie::get('unique_session'))->get();
+        return view('user.orderCategory.checkout-details',compact('depts','labs','carts'));
     }
+    public function cart_table(){
+        $depts = Department::all();
+        $labs = AllLab::all();
+        $carts = TempOrder::where('sessionId', Cookie::get('unique_session'))->get();
+        return view('user.orderCategory.cart_table',compact('depts','labs','carts'));
+    }
+    public function cart_delete($id){
+        $cart = TempOrder::where('sessionId', Cookie::get('unique_session'))->where('id',$id)->first();
+        $cart->delete();
+        return redirect()->to('user/order-category');
+    }
+
+    public function all_cart_delete(){
+        TempOrder::where('sessionId', Cookie::get('unique_session'))->delete();
+        return redirect()->back();
+    }
+
     public function all_product()
     {
         $products = Product::orderBy('group','ASC')->get();

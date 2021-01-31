@@ -56,4 +56,5 @@ class CartController extends Controller
         $table = TempOrder::where('sessionId', Cookie::get('unique_session'))->sum('quantity');
         return $table;
     }
+    
 }

@@ -112,7 +112,7 @@
                 </div>
             </div>
             <div class="order-category text-center pt-30">
-                <h3 class="text-center">Medicine <a href="#"><i class="fas fa-cart-plus"></i> <span id="cart_item"></span></a></h3>
+                <h3 class="text-center">Medicine <a href="{{action('User\OrderCategoryController@cart_table')}}"><i class="fas fa-cart-plus"></i> <span id="cart_item"></span></a></h3>
                <input type="search" id="searchItem" placeholder="Search a Medicine" data-url="{{action('User\OrderCategoryController@itemSearch')}}">
                 
                 <p class="text-center"> Drugs listed by brand generic name starting with the letter</p>

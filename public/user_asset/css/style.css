@@ -747,6 +747,7 @@ ul{
     text-transform: capitalize;
 }
 /*7.4.All medicine part end here*/
+/*7.5.checkout part start here*/
 .checkout-details label {
     font-weight: 600;
     font-size: 22px;
@@ -771,9 +772,39 @@ ul{
     text-transform: uppercase;
     margin-bottom: 15px;
 }
+/*7.5.checkout part end here*/
+/*7.6.cart part start here*/
+.cart{
+    padding: 10px 15px;
+    margin-top: 20px;
+}
+.cart .table table {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    display: block;
+}
+.cart table tbody{
+    border: 1px solid gray;
+    text-transform: capitalize;
+}
+.cart table thead{
+    border: 1px solid gray;
+    text-transform: capitalize;
+    font-size: 25px;
+}
+.all-cart a {
+    display: inline-block;
+    font-size: 20px;
+}
+.all-cart h2 a:hover {
+    color: #17a2b8;
+}
+/*7.6.cart part end here*/
 /*7.order way part end here*/
 /*8.lab info part start here*/
-.lab-info h3 {
+.lab-info h3, .all-cart h2 {
     text-align: center;
     text-transform: capitalize;
     font-size: 30px;
@@ -783,6 +814,8 @@ ul{
 .table {
     padding: 10px 15px;
     margin-top: 20px;
+}
+.lab-table{
     width: 510px;
     height: 320px;
     overflow-y: scroll;
@@ -794,6 +827,8 @@ ul{
 }
 .table table {
     text-transform: uppercase;
+    display: block;
+    padding: 0 30px;
 }
 .even-bg{
     background-color: #57caca;
@@ -805,10 +840,6 @@ ul{
     box-shadow: 0px -1px 9px 3px #57CACA;
     color: #3CABAB;
     scrollbar-color: gray #57CACA;
-}
-.table table {
-    display: block;
-    padding: 0 30px;
 }
 .width-50{
     width: 50px;
@@ -905,6 +936,17 @@ ul{
     }
     100%{
       -moz-transform:translateX(50%);
+    }
+}
+@keyframes footer_wave{
+    0%{
+        -webkit-transform:translateX(0%);
+    }
+    50%{
+      -webkit-transform:translateX(25%);
+    }
+    100%{
+      -webkit-transform:translateX(50%);
     }
 }
 .footer-middle a {
