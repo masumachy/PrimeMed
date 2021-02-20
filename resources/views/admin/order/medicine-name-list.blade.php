@@ -54,7 +54,7 @@
                                             <td>{{$item->deliveryAddress}}</td>
                                             <td>{{$item->medicineQuantity}}</td>
                                             <td class="text-right">
-                                                <a href="#" class="btn btn-sm btn-primary">Approved</a> || <a onclick="return confirm('are you sure to delete lab information?')" href="{{action('Admin\OrderController@deleteName',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Delete</a>
+                                                <a href="#" class="btn btn-sm btn-primary">Approved</a> || <a onclick="return confirm('are you sure to delete lab information?')" href="{{action('Admin\OrderController@deleteName',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Done</a>
                                             </td>
                                         </tr>
                                         @endforeach

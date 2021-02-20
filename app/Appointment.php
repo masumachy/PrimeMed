@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class appointment extends Model
+class Appointment extends Model
 {
     protected $table = 'appointments';
     public function doctor(){

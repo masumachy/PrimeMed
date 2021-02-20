@@ -5,8 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -56,7 +54,15 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
+                                <a href="{{Route('register')}}" class="btn btn-primary" style="color: #fff">
+                                    {{ __('Register') }}
+                                </a>
+                                <a href="{{action('User\HomeController@index')}}" class="btn btn-primary" style="color: #fff">
+                                    Back to Home
+                                </a></br>
+                                <a class="btn btn-link" href="">
+                                    Log in to another Account?
+                                </a></br>
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}

@@ -26,16 +26,10 @@
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
-                            <i class="material-icons">widgets</i>
+                            <i class="material-icons">open_with</i>
                             <span>Orders</span>
                         </a>
                         <ul class="ml-menu">
-                            <li>
-                                <a href="{{action('Admin\ProductCategoryController@list')}}" class=" waves-effect waves-block">Product Category</a>
-                            </li>
-                            <li>
-                                <a href="{{action('Admin\ProductController@list')}}" class=" waves-effect waves-block">Product</a>
-                            </li>
                             <li>
                                 <a href="{{action('Admin\OrderController@prescription_list')}}" class=" waves-effect waves-block">Order With Prescription</a>
                             </li>
@@ -43,10 +37,24 @@
                                 <a href="{{action('Admin\OrderController@medicine_name_list')}}" class=" waves-effect waves-block">Order With Medicine Details</a>
                             </li>
                             <li>
-                                <a href="pages/forms/form-examples.html" class=" waves-effect waves-block">Complete</a>
+                                <a href="{{action('Admin\OrderController@checkout_list')}}" class=" waves-effect waves-block">Order With Cart</a>
                             </li>
                             <li>
                                 <a href="pages/forms/form-validation.html" class=" waves-effect waves-block">Cancel</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                            <i class="material-icons">store</i>
+                            <span>Product</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{{action('Admin\ProductCategoryController@list')}}" class=" waves-effect waves-block">Product Category</a>
+                            </li>
+                            <li>
+                                <a href="{{action('Admin\ProductController@list')}}" class=" waves-effect waves-block">Product</a>
                             </li>
                         </ul>
                     </li>

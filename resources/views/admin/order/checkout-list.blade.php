@@ -1,5 +1,5 @@
 @extends('layouts.admin_master')
-@section('title','OrderWithPrescription')
+@section('title','OrderWithCart')
 @section('content')
 <section class="content">
         <div class="container-fluid">
@@ -9,7 +9,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Order With Preshcription List
+                                Order With Cart List
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -33,13 +33,12 @@
                                     <thead>
                                         <tr role="row">
                                             <th style="width: 50px;">Serial no</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">OrderPerson Name</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Email</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Mobile No</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Delivery Address</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Prescription</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Medicine Quantity</th>
-                                            <th class="sorting text-right" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Action</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Mobile No</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Delivery Date</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Total Price</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Payment Method</th>
+                                            <th class="sorting text-right" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 300px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -49,20 +48,18 @@
                                         @foreach ($order as $item)
                                         <tr role="row" class="odd">
                                             <td class="">{{$item->id}}</td>
-                                            <td>{{$item->name}}</td>
-                                            <td>{{$item->email}}</td>
-                                            <td>{{$item->mobileNo}}</td>
-                                            <td>{{$item->deliveryAddress}}</td>
-                                            <td><img width= "70" height="50" src="{{asset('public/uploads/prescription/'.$item->imageName)}}" alt=""></td>
-                                            <td>{{$item->medicineQuantity}}</td>
+                                            <td>{{$item->address}}</td>
+                                            <td>{{$item->contactNo}}</td>
+                                            <td>{{$item->deliveryDate}}</td>
+                                            <td>{{$item->paidAmount}}</td>
+                                            <td>{{$item->paymentType}}</td>
                                             <td class="text-right">
-                                                <a href="#" class="btn btn-sm btn-primary">Approved</a> || <a onclick="return confirm('are you sure to delete lab information?')" href="{{action('Admin\OrderController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Done</a>
+                                                <a href="{{action('Admin\OrderController@invoice',['id'=>$item->id, 'slug'=>str_slug($item->customer['name'])])}}" class="btn btn-sm "><i class="material-icons">visibility</i></a> || <a href="#" class="btn btn-sm btn-primary">Approved</a> || <a onclick="return confirm('are you sure to delete lab information?')" href="{{action('Admin\OrderController@deleteCart',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Done</a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{$order->links()}}
                             </div>
                         </div>
                     </div>

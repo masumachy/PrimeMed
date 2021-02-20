@@ -1,5 +1,5 @@
 @extends('layouts.user_master')
-@section('title','Medicine')
+@section('title','Services')
 @section('content')
     <!--banner part start here-->
      <div class="banner-area owl-carousel h-300">

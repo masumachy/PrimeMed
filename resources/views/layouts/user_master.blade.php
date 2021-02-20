@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{asset('public/user_asset')}}/css/owl.carousel.min.css">
     <link rel="stylesheet" href="{{asset('public/user_asset')}}/css/style.css">
     <link rel="stylesheet" href="{{asset('public/user_asset')}}/css/responsive.css">
+    @yield('style')
 </head>
 <body>
 <!--top part start here-->

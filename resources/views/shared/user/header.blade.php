@@ -61,6 +61,20 @@
                                 </ul>
                             </li>
                             <li><a href="">contact</a></li>
+                            @if (isset(Auth::user()->email))
+                            <li><a href="#"><i class="far fa-user"></i> {{Auth::user()->name}} <i class="fas fa-chevron-down"></i></a>
+                                <ul>
+                                    <li><a href="{{action('User\LoginController@dashboard')}}">dashboard</a></li>
+                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">logout</a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </ul>
+                            </li>
+                            @else
+                            <li><a href="{{route('login')}}">Login</a></li>
+                            @endif
                         </ul>
                     </nav>                  
                 </div>

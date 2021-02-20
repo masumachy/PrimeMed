@@ -1,5 +1,5 @@
 @extends('layouts.user_master')
-@section('title','Cart-Table')
+@section('title','Dashboard')
 @section('content')
     <!--banner part start here-->
      <div class="banner-area owl-carousel h-300">
@@ -85,48 +85,37 @@
         <div class="container">
             <div class="cart-table">
                 <div class="row">
+                    
                     <div class="col-xl-12 text-center">
                         <div class="all-cart">
-                            <h2>cart product <a title="delete all item" onclick="return confirm('Are you sure?')" href="{{action('User\OrderCategoryController@all_cart_delete')}}">clear</a></h2>
+                            <h2>your order</h2>
                             <div class="cart text-left">
                                 <table class="table">
                                     <thead>
                                       <tr>
-                                            <th scope="col">product details</th>
-                                            <th scope="col">quantity</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">Total</th>
-                                            <th scope="col">action</th>
+                                            <th scope="col">delivery address</th>
+                                            <th scope="col">mobile no</th>
+                                            <th scope="col">delivery date</th>
+                                            <th scope="col">Total price</th>
+                                            <th scope="col">payment method</th>
+                                            <th scope="col">status</th>
                                       </tr>
                                     </thead>
                                     <tbody>
-                                      @foreach ($carts as $item)
-                                      @php
-                                          $unit_price = $item->price;
-                                          $quantity = $item->quantity;
-                                          $total = $unit_price * $quantity;
-                                      @endphp
-                                      <tr>
-                                            <td>{{$item->product['name']}}</td>
-                                            <td><input type="number" value="{{$item->quantity}}" name="quantity"></td>
-                                            <td>{{money($item->price)}}</td>
-                                            <td>{{money($total)}}</td>
-                                            <td><a href="{{action('User\OrderCategoryController@cart_delete',['id'=>$item->id])}}" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm">delete</a></td>
-                                      </tr>
-                                      @endforeach
+                                        @foreach ($orders as $item)
+                                            <tr>
+                                                <td>{{$item->address}}</td>  
+                                                <td>{{$item->contactNo}}</td>
+                                                <td>{{$item->deliveryDate}}</td>
+                                                <td>{{$item->paidAmount}}</td>
+                                                <td>{{$item->paymentType}}</td>
+                                                <td><a href="{{action('User\LoginController@invoice',['id'=>$item->id])}}" class="btn btn-info btn-sm">view</a></td>
+                                            </tr>
+                                        @endforeach
+                                      
                                     </tbody>
                                 </table>
                             </div>
-                            @php
-                                $sub_total = 0;
-                            @endphp
-                            @foreach($carts as $row)
-                                @php
-                                    $sub_total += ($row->price * $row->quantity);
-                                @endphp
-                            @endforeach
-                            <a href="" class="btn btn-light">subtotal: <span>{{money($sub_total)}}</span></a>
-                            <a href="{{action('User\OrderController@checkout_details')}}" class="btn btn-info">CheckOut</a> 
                         </div>
                     </div>
                     <div class="col-xl-2"></div>

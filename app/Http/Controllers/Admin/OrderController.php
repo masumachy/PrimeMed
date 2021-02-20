@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 use App\OrderFormPrescription;
 use App\OrderWithName;
+use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -29,5 +29,19 @@ class OrderController extends Controller
         $order = OrderWithName::find($id);
         $order->delete();
         return redirect()->to('admin/order-with-name');
+    }
+    public function checkout_list()
+    {
+        $order = Order::paginate(10);
+        return view('admin.order.checkout-list',compact('order'));
+    }
+    public function deleteCart($id){
+        $order = Order::find($id);
+        $order->delete();
+        return redirect()->to('admin/order-with-cart');
+    }
+    public function invoice($id){
+        $order = Order::find($id);
+        return view('admin.order.invoice',compact('order'));
     }
 }

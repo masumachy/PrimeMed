@@ -158,7 +158,6 @@ ul{
     text-decoration: none;
     font-size: 17px;
     text-transform: capitalize;
-    font-style: italic;
     font-weight: 600;
     transition: .5s;
     padding: 10px;
@@ -792,7 +791,7 @@ ul{
 .cart table thead{
     border: 1px solid gray;
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 20px;
 }
 .all-cart a {
     display: inline-block;
@@ -892,7 +891,130 @@ ul{
     border-radius: 30px 30px;
 }
 /*9. services-part end here*/
-/*10.footer-area start here*/
+/*10. invoice-part start here*/
+#invoice{
+    padding: 30px;
+}
+.invoice {
+    position: relative;
+    background-color: #FFF;
+    min-height: 680px;
+    padding: 15px
+}
+.invoice header {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #3989c6
+}
+.invoice .company-details {
+    text-align: right
+}
+.invoice .company-details .name {
+    margin-top: 0;
+    margin-bottom: 0
+}
+.invoice .contacts {
+    margin-bottom: 20px
+}
+.invoice .invoice-to {
+    text-align: left
+}
+.invoice .invoice-to .to {
+    margin-top: 0;
+    margin-bottom: 0
+}
+.invoice .invoice-details {
+    text-align: right
+}
+.invoice .invoice-details .invoice-id {
+    margin-top: 0;
+    color: #3989c6
+}
+.invoice main {
+    padding-bottom: 50px
+}
+.invoice main .thanks {
+    margin-top: -11rem;
+    font-size: 2em;
+    margin-bottom: 50px
+}
+.invoice main .notices {
+    padding-left: 6px;
+    border-left: 6px solid #3989c6
+}
+.invoice main .notices .notice {
+    font-size: 1.2em
+}
+.invoice table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px
+}
+.invoice table td,.invoice table th {
+    padding: 15px;
+    background: #eee;
+    border-bottom: 1px solid #fff
+}
+.invoice table th {
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 16px
+}
+.invoice table td h3 {
+    margin: 0;
+    font-weight: 400;
+    color: #3989c6;
+    font-size: 1.2em
+}
+.invoice table .qty,.invoice table .total,.invoice table .unit {
+    text-align: right;
+    font-size: 1.2em
+}
+.invoice table .no {
+    color: #fff;
+    font-size: 1.6em;
+    background: #3989c6
+}
+.invoice table .unit {
+    background: #ddd
+}
+.invoice table .total {
+    background: #3989c6;
+    color: #fff
+}
+.invoice table tbody tr:last-child td {
+    border: none
+}
+.invoice table tfoot td {
+    background: 0 0;
+    border-bottom: none;
+    white-space: nowrap;
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-top: 1px solid #aaa
+}
+.invoice table tfoot tr:first-child td {
+    border-top: none
+}
+.invoice table tfoot tr:last-child td {
+    color: #3989c6;
+    font-size: 1.4em;
+    border-top: 1px solid #3989c6
+}
+.invoice table tfoot tr td:first-child {
+    border: none
+}
+.invoice footer {
+    width: 100%;
+    text-align: center;
+    color: #777;
+    border-top: 1px solid #aaa;
+    padding: 8px 0
+}
+/*10. invoice-part end here*/
+/*11.footer-area start here*/
 .footer-area{
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+18,e6f8fd+30,c8eefb+54,bee4f8+75,b1d8f5+100 */
     background: #e1ffff; /* Old browsers */

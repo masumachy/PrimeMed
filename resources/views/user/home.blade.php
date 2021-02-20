@@ -57,6 +57,11 @@
         </div>
     </div>
     <!--banner-area part end here-->
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
     <!--Service-area part start here-->
     <section class="service-area pt-70 pb-70">
         <div class="container">

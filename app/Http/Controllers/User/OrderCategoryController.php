@@ -69,12 +69,6 @@ class OrderCategoryController extends Controller
         $order->save();
         return redirect()->back()->with(['zannat' => 'Your Order is confirmed!']);
     }
-    public function checkout_details(){
-        $depts = Department::all();
-        $labs = AllLab::all();
-        $carts = TempOrder::where('sessionId', Cookie::get('unique_session'))->get();
-        return view('user.orderCategory.checkout-details',compact('depts','labs','carts'));
-    }
     public function cart_table(){
         $depts = Department::all();
         $labs = AllLab::all();
@@ -84,14 +78,13 @@ class OrderCategoryController extends Controller
     public function cart_delete($id){
         $cart = TempOrder::where('sessionId', Cookie::get('unique_session'))->where('id',$id)->first();
         $cart->delete();
-        return redirect()->to('user/order-category');
+        return redirect()->back();
     }
 
     public function all_cart_delete(){
         TempOrder::where('sessionId', Cookie::get('unique_session'))->delete();
-        return redirect()->back();
+        return redirect()->to('user/order-category');
     }
-
     public function all_product()
     {
         $products = Product::orderBy('group','ASC')->get();
