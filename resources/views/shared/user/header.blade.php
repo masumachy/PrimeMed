@@ -1,13 +1,14 @@
 <!--top part start here-->
 <nav class="navbar navbar-light bg-color">
     <div class="container">
-            <a href="" class="contact">&nbsp;<i class="fas fa-phone-volume"></i> 017123457654&nbsp;</a>
-            <a href="" class="email">&nbsp;<i class="fas fa-envelope-open-text"></i> primemed@gmail.com&nbsp;</a>
-            <div class="search-btn">
-                <form class="form-inline">
-                        <input class="form-control mr-sm-2 " type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                </form>
+            <a href="tel:017123457654" class="contact">&nbsp;<i class="fas fa-phone-volume"></i> 017123457654&nbsp;</a>
+            <a href="mailto: email" class="email">&nbsp;<i class="fas fa-envelope-open-text"></i> primemed@gmail.com&nbsp;</a>
+            
+            <div class="header-icon">
+                <a href="https://www.facebook.com" class="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" class="twitter"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://www.whatsapp.com" class="whatsapp"><i class="fab fa-whatsapp-square"></i></a>
+                <a href="https://www.linkedin.com" class="linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
     </div>
     </div>
@@ -51,16 +52,11 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            <li><a href="{{action('User\ServicesController@services')}}">services <i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="">ambulance</a></li>
-                                    <li><a href="">blood donation</a></li>
-                                    <li><a href="">oxygen service</a></li>
-                                    <li><a href="">icu vacancy</a></li>
-                                    <li><a href="">doctor support</a></li>
-                                </ul>
+                            <li><a href="{{action('User\ServicesController@services')}}">services</a>
+                                
                             </li>
-                            <li><a href="">contact</a></li>
+                            <li><a href="{{action('User\ContactController@contact')}}">contact</a></li>
+                            
                             @if (isset(Auth::user()->email))
                             <li><a href="#"><i class="far fa-user"></i> {{Auth::user()->name}} <i class="fas fa-chevron-down"></i></a>
                                 <ul>

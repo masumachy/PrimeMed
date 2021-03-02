@@ -6,7 +6,6 @@
         <div class="container-fluid">
             <div class="invoice-part">
                 <div id="invoice">
-
                     <div class="toolbar hidden-print">
                         <div class="text-right">
                             <a href="{{action('Admin\OrderController@checkout_list')}}" class="btn btn-info"><i class="fa fa-print"></i> Back</a>

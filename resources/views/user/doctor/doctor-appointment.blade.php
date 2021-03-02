@@ -9,8 +9,12 @@
                 <div class="col-xl-12 h-300">
                     <div class="banner">
                         <h4>welcome</h4>
-                        <h2>gain the beautiful</h2>
-                        <a href="" class="box-btn">read more</a>
+                        <nav aria-label="breadcrumb" class="text-center">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Appointment</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -22,8 +26,12 @@
                 <div class="col-xl-12 h-300">
                     <div class="banner">
                         <h4>welcome</h4>
-                        <h2>gain the beautiful</h2>
-                        <a href="" class="box-btn">read more</a>
+                        <nav aria-label="breadcrumb" class="text-center">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Appointment</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -35,8 +43,12 @@
                 <div class="col-xl-12 h-300">
                     <div class="banner">
                         <h4>welcome</h4>
-                        <h2>gain the beautiful</h2>
-                        <a href="" class="box-btn">read more</a>
+                        <nav aria-label="breadcrumb" class="text-center">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Appointment</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -48,8 +60,12 @@
                 <div class="col-xl-12 h-300">
                     <div class="banner">
                         <h4>welcome</h4>
-                        <h2>gain the beautiful</h2>
-                        <a href="" class="box-btn">read more</a>
+                        <nav aria-label="breadcrumb" class="text-center">
+                            <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Appointment</li>
+                            </ol>
+                        </nav>
                     </div>
                 </div>
             </div>

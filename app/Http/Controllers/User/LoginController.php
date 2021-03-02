@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Department;
 use App\AllLab;
 use App\Order;
+use App\Appointment;
+use App\Services;
 use Auth;
 class LoginController extends Controller
 {
@@ -21,6 +23,8 @@ class LoginController extends Controller
         $depts = Department::all();
         $labs = AllLab::all();
         $orders = Order::where('user_id',Auth::user()->id)->get();
-        return view('user.user.dashboard',compact('depts','labs','orders'));
+        $appointment = Appointment::where('user_id',Auth::user()->id)->get();
+        $services = Services::where('user_id',Auth::user()->id)->get();
+        return view('user.user.dashboard',compact('depts','labs','orders','appointment','services'));
     }
 }

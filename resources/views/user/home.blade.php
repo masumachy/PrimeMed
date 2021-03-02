@@ -10,7 +10,6 @@
                         <div class="banner">
                             <h4>welcome</h4>
                             <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
                         </div>
                     </div>
                 </div>
@@ -23,7 +22,6 @@
                         <div class="banner">
                             <h4>welcome</h4>
                             <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +34,6 @@
                         <div class="banner">
                             <h4>welcome</h4>
                             <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +46,6 @@
                         <div class="banner">
                             <h4>welcome</h4>
                             <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
                         </div>
                     </div>
                 </div>
@@ -57,11 +53,7 @@
         </div>
     </div>
     <!--banner-area part end here-->
-    @if(session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
-    @endif
+    
     <!--Service-area part start here-->
     <section class="service-area pt-70 pb-70">
         <div class="container">
@@ -74,14 +66,14 @@
                         <div class="single-service">
                             <a href=""><i class="fas fa-pills"></i></a>
                             <h4>check about <span>medicine order</span></h4>
-                            <a href="" class="service-link"><i class="fas fa-arrow-right"></i></a>
+                            <a href="{{action('User\OrderCategoryController@order_category')}}" class="service-link"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
                         <div class="single-service">
                             <a href=""><i class="fas fa-calendar-check"></i></a>
                             <h4>make an <span>appointment</span></h4>
-                            <a href="" class="service-link"><i class="fas fa-arrow-right"></i></a>
+                            <a href="{{action('User\DoctorController@all_doctor')}}" class="service-link"><i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-12">
@@ -108,42 +100,42 @@
                         <div class="single-blog">
                             <img src="{{asset('public/user_asset')}}/images/blogs/ambulance.png" alt="">
                             <h4>call for <span>ambulance</span></h4>
-                            <a class="box-btn" href="">learn more</a>
+                            <a class="box-btn" href="{{action('User\ServicesController@services')}}">learn more</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6"> 
                         <div class="single-blog">
                             <img src="{{asset('public/user_asset')}}/images/blogs/icu.png" alt="">
                             <h4>search for <span>icu vacancy</span></h4>
-                            <a class="box-btn" href="">learn more</a>
+                            <a class="box-btn" href="{{action('User\ServicesController@services')}}">learn more</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6"> 
                         <div class="single-blog">
                             <img src="{{asset('public/user_asset')}}/images/blogs/blood-transfusion.png" alt="">
                             <h4>look for<span>blood donation</span></h4>
-                            <a class="box-btn" href="">learn more</a>
+                            <a class="box-btn" href="{{action('User\ServicesController@services')}}">learn more</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6"> 
                         <div class="single-blog">
                             <img src="{{asset('public/user_asset')}}/images/blogs/customer-service.png" alt="">
                             <h4>24/7 active support<span>customer service</span></h4>
-                            <a class="box-btn" href="">learn more</a>
+                            <a class="box-btn" href="{{action('User\ServicesController@services')}}">learn more</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6"> 
                         <div class="single-blog">
                             <img src="{{asset('public/user_asset')}}/images/blogs/oxygen.png" alt="">
                             <h4>emergency need for<span>Oxygen Supply</span></h4>
-                            <a class="box-btn" href="">learn more</a>
+                            <a class="box-btn" href="{{action('User\ServicesController@services')}}">learn more</a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6"> 
                         <div class="single-blog">
                             <img src="{{asset('public/user_asset')}}/images/blogs/doctor.png" alt="">
                             <h4>seek for<span>Primary Care</span></h4>
-                            <a class="box-btn" href="">learn more</a>
+                            <a class="box-btn" href="{{action('User\ServicesController@services')}}">learn more</a>
                         </div>
                     </div>
                 </div>

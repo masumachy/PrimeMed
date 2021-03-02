@@ -21,10 +21,12 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('lab-report','User\LaboratoryController@lab_report');
     //appointment
     Route::get('doctor-appointment/{id}','User\DoctorController@doctor_appointment');
-    // user
+    Route::post('save-doctor-appointment','User\DoctorController@save');
+    // shop
     Route::get('user/checkout-details','User\OrderController@checkout_details');
     Route::post('save-cart','User\OrderController@savecart');
-    // user
+    // services
+    Route::post('save-services','User\ServicesController@save');
     
     /*----------------Admin Panel------------------ */
 
@@ -56,6 +58,7 @@ Route::group(['middleware'=>'auth'],function(){
             Route::get('delete-doctor/{id}','Admin\DoctorController@delete');
             /*----------------------Appointment--------------------- */
             Route::get('appointment-list','Admin\AppointmentController@appointment_list');
+            Route::post('update-appointment','Admin\AppointmentController@update');
             Route::get('appointment-check/{id}','Admin\AppointmentController@check');
             Route::get('checked_list','Admin\AppointmentController@checked_list');
             Route::get('delete-appointment/{id}','Admin\AppointmentController@delete');
@@ -81,6 +84,7 @@ Route::group(['middleware'=>'auth'],function(){
             Route::get('delete-name-list/{id}','Admin\OrderController@deleteName');
             /*----------------------Order with Cart---------------------- */
             Route::get('order-with-cart','Admin\OrderController@checkout_list');
+            Route::post('update-status','Admin\OrderController@update');
             Route::get('delete-cart/{id}','Admin\OrderController@deleteCart');
             Route::get('invoice/{id}/{slug}','Admin\OrderController@invoice');
             /*----------------------All-Lab--------------------- */
@@ -107,6 +111,10 @@ Route::group(['middleware'=>'auth'],function(){
             Route::get('delete-sub-lab-info/{id}','Admin\SubLabInfoController@delete');
             /*----------------------LabReport--------------------- */
             Route::get('new-lab-report','Admin\LabReportController@new_lab_report');
+            /*----------------------Services--------------------- */
+            Route::get('services-list','Admin\ServicesController@services_list');
+            Route::post('update-services','Admin\ServicesController@update');
+            Route::get('delete-services/{id}','Admin\ServicesController@delete');
         });
     });
 });
@@ -115,15 +123,14 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/','User\HomeController@index');
     Route::group(['prefix'=>'user'],function(){
     /*------------------------Doctor----------------------- */
-    
-    Route::post('save-doctor-appointment','User\DoctorController@save');
     Route::get('department/{id}/{slug}','User\DoctorController@dept_wise');
     Route::get('sub-department/{id}/{slug}','User\DoctorController@sub_dept_wise');
+    Route::get('all-doctor','User\DoctorController@all_doctor');
     /*--------------------orderCategory-------------------- */
+    Route::get('order-category','User\OrderCategoryController@order_category');
     Route::get('all-product','User\OrderCategoryController@all_product');
     Route::get('category-wise-product/{id}','User\OrderCategoryController@category_wise');
     Route::get('search','User\OrderCategoryController@itemSearch');
-    Route::get('order-category','User\OrderCategoryController@order_category');
     Route::get('order-form','User\OrderCategoryController@order_form');
     Route::post('save-order','User\OrderCategoryController@save');
     Route::post('save-order-Name','User\OrderCategoryController@saveName');
@@ -136,6 +143,11 @@ Route::group(['middleware'=>'auth'],function(){
     Route::post('save-lab-report','User\LaboratoryController@save');
     /*----------------------Services---------------------- */
     Route::get('services','User\ServicesController@services');
+    Route::get('services-form','User\ServicesController@services_form');
+    
+    /*----------------------Contact---------------------- */
+    Route::get('contact','User\ContactController@contact');
+    Route::post('save-contact','User\ContactController@save');
     /*----------------------User---------------------- */
     Route::get('invoice/{id}','User\LoginController@invoice');
     Route::get('user-dashboard','User\LoginController@dashboard');

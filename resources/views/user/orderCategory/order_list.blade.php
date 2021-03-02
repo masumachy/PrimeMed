@@ -14,7 +14,7 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Shop</li>
                                 </ol>
                             </nav>
@@ -31,7 +31,7 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Shop</li>
                                 </ol>
                             </nav>
@@ -48,7 +48,7 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Shop</li>
                                 </ol>
                             </nav>
@@ -65,7 +65,7 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Shop</li>
                                 </ol>
                             </nav>
@@ -112,38 +112,16 @@
                 </div>
             </div>
             <div class="order-category text-center pt-30">
-                <h3 class="text-center">Medicine <a href="{{action('User\OrderCategoryController@cart_table')}}"><i class="fas fa-cart-plus"></i> <span id="cart_item"></span></a></h3>
-               <input type="search" id="searchItem" placeholder="Search a Medicine" data-url="{{action('User\OrderCategoryController@itemSearch')}}">
+                <h3 class="text-center">Pharmacy <a href="{{action('User\OrderCategoryController@cart_table')}}"><i class="fas fa-cart-plus"></i> <span id="cart_item"></span></a></h3>
                 
-                <p class="text-center"> Drugs listed by brand generic name starting with the letter</p>
-                <p class="medicine-group text-center">
-                    <a href="">a</a>
-                    <a href="">b</a>
-                    <a href="">c</a>
-                    <a href="">d</a>
-                    <a href="">e</a>
-                    <a href="">f</a>
-                    <a href="">g</a>
-                    <a href="">h</a>
-                    <a href="">i</a>
-                    <a href="">j</a>
-                    <a href="">k</a>
-                    <a href="">l</a>
-                    <a href="">m</a>
-                    <a href="">n</a>
-                    <a href="">o</a>
-                    <a href="">p</a>
-                    <a href="">q</a>
-                    <a href="">r</a>
-                    <a href="">s</a>
-                    <a href="">t</a>
-                    <a href="">u</a>
-                    <a href="">v</a>
-                    <a href="">w</a>
-                    <a href="">x</a>
-                    <a href="">y</a>
-                    <a href="">z</a>
-                </p>
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
+               
+                <input type="search" id="searchItem" placeholder="Search a Medicine" data-url="{{action('User\OrderCategoryController@itemSearch')}}">
+                
                 <div class="row">
                     <div class="col-xl-4">
                         <div class="side-bar text-left">

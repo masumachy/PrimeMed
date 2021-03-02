@@ -9,8 +9,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Services</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -22,8 +26,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Services</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -35,8 +43,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Services</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -48,8 +60,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Services</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -65,9 +81,10 @@
                 <div class="services">
                     <div class="row services">
                         <div class="col-xl-6">
-                            <div class="single-service-part">
+                            <div class="single-service-part text-center">
                                 <h2>call for ambulance</h2>
-                                <h4>contact here-> <a href="">0123456789</a></h4>
+                                <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
+                                <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
                             </div>
                         </div>
                         <div class="col-xl-6">
@@ -75,75 +92,63 @@
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/ambulance2.jpg" alt="">
                             </div>
                         </div>
-                    </div>   
-                </div>
-            </div>
-            <div class="container pt-70 pb-70">
-                <div class="services">
-                    <div class="row services">
+                    </div> 
+                    <div class="row services pt-30 pb-30">
                         <div class="col-xl-6">
                             <div class="single-service-part">
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/blood.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-xl-6">
-                            <div class="single-service-part">
+                            <div class="single-service-part text-center">
                                 <h2>look for blood donation</h2>
-                                <h4>contact here-> <a href="">0123456789</a></h4>
+                                <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
+                                <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="container pt-70 pb-70">
-                <div class="services">
-                    <div class="row services">
+                    <div class="row services pt-30 pb-30">
+                        <div class="col-xl-6">
+                            <div class="single-service-part text-center">
+                                <h2>search for ICU vacancy</h2>
+                                <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
+                                <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
+                            </div>
+                        </div>
                         <div class="col-xl-6">
                             <div class="single-service-part">
-                                <h2>search for ICU vacancy</h2>
-                                <h4>contact here-> <a href="">0123456789</a></h4>
+                                <img src="{{asset('public/user_asset')}}/images/otherServices/ICU.jpg" alt="">
                             </div>
                         </div>
-                    <div class="col-xl-6">
-                        <div class="single-service-part">
-                            <img src="{{asset('public/user_asset')}}/images/otherServices/ICU.jpg" alt="">
-                        </div>
                     </div>
-                 </div>
-            </div>
-        </div>
-        <div class="container pt-70 pb-70">
-            <div class="services">
-                <div class="row services">
-                    <div class="col-xl-6">
-                        <div class="single-service-part">
-                            <img src="{{asset('public/user_asset')}}/images/otherServices/oxygen2.jpg" alt="">
+                    <div class="row services pt-30 pb-30">
+                        <div class="col-xl-6">
+                            <div class="single-service-part">
+                                <img src="{{asset('public/user_asset')}}/images/otherServices/oxygen2.jpg" alt="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="single-service-part">
-                            <h2>emergency need for oxygen supply</h2>
-                            <h4>contact here-> <a href="">0123456789</a></h4>
+                        <div class="col-xl-6">
+                            <div class="single-service-part text-center">
+                                <h2>emergency need for oxygen supply</h2>
+                                <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
+                                <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
+                            </div>
                         </div>
-                    </div>
-                </div>        
-            </div>
-        </div>
-        <div class="container pt-70 pb-70">
-            <div class="services">
-                <div class="row services">
-                    <div class="col-xl-6">
-                        <div class="single-service-part">
-                            <h2>seek for primary care</h2>
-                            <h4>contact here-> <a href="">0123456789</a></h4>
+                    </div> 
+                    <div class="row services pt-30">
+                        <div class="col-xl-6">
+                            <div class="single-service-part text-center">
+                                <h2>seek for primary care</h2>
+                                <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
+                                <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
+                            </div>
                         </div>
-                    </div>
                         <div class="col-xl-6">
                             <div class="single-service-part">
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/primary.png" alt="">
                             </div>
                         </div>
-                    </div>        
+                    </div> 
                 </div>
             </div>
         </div>

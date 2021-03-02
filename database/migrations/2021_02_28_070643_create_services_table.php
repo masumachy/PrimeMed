@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAppointmentsTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateAppointmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('appointments', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->UnsignedBigInteger('doctor_id')->index();
-            $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('No Action')->onUpdate('No Action');
-            $table->string('name',100);
-            $table->text('address');
-            $table->double('patient_Age');
-            $table->string('number');
-            $table->string('status',100)->default('unchecked');
+            $table->string('name',50);
+            $table->string('email',50)->nullable();
+            $table->string('mobileNo',20);
+            $table->string('address',200);
+            $table->string('services',50);
+            $table->string('bloodGroup',20);
+            $table->text('message');
+            $table->text('adminSays')->default('Wait Few Minutes');
             $table->unsignedBigInteger('user_id')->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('No Action')->onUpdate('No Action');
             $table->timestamps();
@@ -35,6 +36,6 @@ class CreateAppointmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appointments');
+        Schema::dropIfExists('services');
     }
 }

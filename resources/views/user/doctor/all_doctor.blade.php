@@ -1,5 +1,5 @@
 @extends('layouts.user_master')
-@section('title','Specialist')
+@section('title','All-Specialist')
 @section('content')
     <!--banner part start here-->
      <div class="banner-area owl-carousel h-300">
@@ -13,8 +13,7 @@
                                 <ol class="breadcrumb">
                                   <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Appointment</li>
-                                  <li class="breadcrumb-item active" aria-current="page">Department</li>
-                                  <li class="breadcrumb-item active" aria-current="page">{{$dept->dept_Name}}</li>
+                                  <li class="breadcrumb-item active" aria-current="page">Doctor</li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,8 +31,7 @@
                                 <ol class="breadcrumb">
                                   <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Appointment</li>
-                                  <li class="breadcrumb-item active" aria-current="page">Department</li>
-                                  <li class="breadcrumb-item active" aria-current="page">{{$dept->dept_Name}}</li>
+                                  <li class="breadcrumb-item active" aria-current="page">Doctor</li>
                                 </ol>
                             </nav>
                         </div>
@@ -51,8 +49,7 @@
                                 <ol class="breadcrumb">
                                   <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Appointment</li>
-                                  <li class="breadcrumb-item active" aria-current="page">Department</li>
-                                  <li class="breadcrumb-item active" aria-current="page">{{$dept->dept_Name}}</li>
+                                  <li class="breadcrumb-item active" aria-current="page">Doctor</li>
                                 </ol>
                             </nav>
                         </div>
@@ -70,8 +67,7 @@
                                 <ol class="breadcrumb">
                                   <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">Appointment</li>
-                                  <li class="breadcrumb-item active" aria-current="page">Department</li>
-                                  <li class="breadcrumb-item active" aria-current="page">{{$dept->dept_Name}}</li>
+                                  <li class="breadcrumb-item active" aria-current="page">Doctor</li>
                                 </ol>
                             </nav>
                         </div>
@@ -84,7 +80,7 @@
     <div class="medicine-area  pb-70">
         <div class="container">
             <div class="medicine appointment">
-                <h3 class="pb-30 pt-30">{{$dept->dept_Name}}</h3>
+                <h3 class="pb-30 pt-30">All Doctors</h3>
                 <div class="row">
                     @if (count($doctors) > 0)
                     @foreach ($doctors as $doctor)
@@ -92,6 +88,7 @@
                         <div class="single-medicine single-appointment">
                             <img src="{{asset('public/user_asset')}}/images/medicine/dr.jpg" alt="">
                             <p><span>name:</span>{{$doctor->name}}</p>
+                            <p><span>specialist:</span>{{$doctor->specialist}}</p>
                             <p><span>degrees:</span>{{$doctor->degrees}}</p>
                             <p><span>check fee:</span>{{money($doctor->checkFee)}}</p>
                             <p><span>chamber details:</span>{{$doctor->chamberDetails}}</p>
@@ -105,6 +102,7 @@
                     <h1>No Doctor Available</h1>
                     @endif
                 </div>
+                    {{$doctors->links()}}
             </div>
         </div>
     </div>

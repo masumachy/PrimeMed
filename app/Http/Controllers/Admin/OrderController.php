@@ -40,6 +40,12 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->to('admin/order-with-cart');
     }
+    public function update(Request $request){
+        $order = Order::find($request->id);
+        $order->orderStatus = $request->orderStatus;
+        $order->save();
+        return redirect()->to('admin/order-with-cart');
+    }
     public function invoice($id){
         $order = Order::find($id);
         return view('admin.order.invoice',compact('order'));

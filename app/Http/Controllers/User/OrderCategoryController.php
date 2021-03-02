@@ -80,6 +80,11 @@ class OrderCategoryController extends Controller
         $cart->delete();
         return redirect()->back();
     }
+    public function cart_update($id){
+        $cart = TempOrder::where('sessionId', Cookie::get('unique_session'))->where('id',$id)->first();
+        $cart->save();
+        return redirect()->back();
+    }
 
     public function all_cart_delete(){
         TempOrder::where('sessionId', Cookie::get('unique_session'))->delete();

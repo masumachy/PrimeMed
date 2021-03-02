@@ -9,7 +9,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Order With Cart List
+                                Services List
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -33,11 +33,12 @@
                                     <thead>
                                         <tr role="row">
                                             <th style="width: 50px;">Serial no</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Delivery Address</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
                                             <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Mobile No</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Delivery Date</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Total Price</th>
-                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Payment Method</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Address</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Services</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Blood Group</th>
+                                            <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 250px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Message</th>
                                             <th class="sorting text-right" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 300px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Action</th>
                                         </tr>
                                     </thead>
@@ -45,35 +46,29 @@
                                         @php
                                             $i = 1;
                                         @endphp
-                                        @foreach ($order as $item)
+                                        @foreach ($services as $item)
                                         <tr role="row" class="odd">
                                             <td class="">{{$item->id}}</td>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->mobileNo}}</td>
                                             <td>{{$item->address}}</td>
-                                            <td>{{$item->contactNo}}</td>
-                                            <td>{{$item->deliveryDate}}</td>
-                                            <td>{{$item->paidAmount}}</td>
-                                            <td>{{$item->paymentType}}</td>
+                                            <td>{{$item->services}}</td>
+                                            <td>{{$item->bloodGroup}}</td>
+                                            <td>{{$item->message}}</td>
                                             <td class="text-right">
-                                                <a href="{{action('Admin\OrderController@invoice',['id'=>$item->id, 'slug'=>str_slug($item->customer['name'])])}}" class="btn btn-sm "><i class="material-icons">visibility</i></a> || <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$item->id}}" data-whatever="@mdo">Approved</button> 
+                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$item->id}}" data-whatever="@mdo">Approved</button> 
                                                 
                                                 <div class="modal fade" id="exampleModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-body">
-                                                                <form method="post" class="" action="{{action('Admin\OrderController@update')}}">
+                                                                <form method="post" class="" action="{{action('Admin\ServicesController@update')}}">
                                                                     @csrf
                                                                     <input type="hidden" name="id" value="{{$item->id}}">
                                                                     <div class="form-group order-form text-left">
-                                                                        <label for="recipient-name" class="col-form-label">Order Status</label><br>
-                                                                        <select name="orderStatus" id="">
-                                                                            <option value="Pending" {{$item->orderStatus == 'Pending' ? 'selected' : ''}}>Pending</option>
-                                                                            <option value="On the Way" {{$item->orderStatus == 'On the Way' ? 'selected' : ''}}>On the Way</option>
-                                                                            <option value="Ready" {{$item->orderStatus == 'Ready' ? 'selected' : ''}}>Ready</option>
-                                                                            <option value="Delivery Done" {{$item->orderStatus == 'Delivery Done' ? 'selected' : ''}}>Delivery Done</option>
-                                                                            <option value="On Process" {{$item->orderStatus == 'On Process' ? 'selected' : ''}}>On Process</option>
-                                                                        </select>
+                                                                        <label for="recipient-name" class="col-form-label">Admin Says</label><br>
+                                                                        <input type="text" name="adminSays" value="{{$item->adminSays}}">
                                                                     </div>
-
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                                                         <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -85,7 +80,7 @@
                                                     </div>
                                                 </div>
                                                 || 
-                                                <a onclick="return confirm('are you sure to delete cart?')" href="{{action('Admin\OrderController@deleteCart',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Done</a>
+                                                <a onclick="return confirm('are you sure to delete user details?')" href="{{action('Admin\ServicesController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Done</a>
                                                 
                                             </td>
                                         </tr>

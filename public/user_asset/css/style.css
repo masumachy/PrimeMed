@@ -77,23 +77,9 @@ ul{
     background-color: #06aeae;
 }
 /*2.top part start here*/
-.search-btn{
-    position: relative;
-}
-.search-btn input{
-    position: relative;
-}
-.search-btn button {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    color: #fff;
-    width: 40px;
-    background-color: #868686;
-    padding-bottom: 7px;
-}
-.search-btn button:hover{
-    color: teal;
+.header-icon a{
+    font-size: 22px;
+    margin: 0 2px;
 }
 .contact:hover {
     background-color: white;
@@ -178,7 +164,7 @@ ul{
     visibility: hidden;
     top: 120%;
     transition: .3s;
-    border-radius: 0px 20px;
+    border-radius: 15px;
     margin-left: 10px;
 }
 .menu ul li:hover ul{
@@ -210,7 +196,7 @@ ul{
     border-radius: 0px;
 }
 .menu ul li ul li a:hover {
-   border-radius: 0px 25px 0px 0px;
+    border-radius: 0px;
 }
 .menu ul li ul li a {
     margin: 0px;
@@ -517,7 +503,7 @@ ul{
 }
 /*5.team-area end here*/
 /*6.appointment part start here*/
-.appointment h3 {
+.appointment h3, .all-appointment h2, .all-services h2 {
     text-align: center;
     text-transform: capitalize;
     font-style: italic;
@@ -685,6 +671,7 @@ ul{
     padding: 10px;
     border: 2px solid #57CACA;
     background-color: #fff;
+    margin: 15px 0px;
 }
 .sub-order:hover{
     box-shadow: 1px 5px 8px -2px #57CACA;
@@ -707,7 +694,7 @@ ul{
 }
 /*7.2.order category part end here*/
 /*7.3.order form part start here*/
-.order-form input, .order-form textarea {
+.order-form input, .order-form textarea, .order-form select {
     width: 100%;
     margin-top: 15px;
     padding: 10px 5px;
@@ -785,7 +772,7 @@ ul{
     display: block;
 }
 .cart table tbody{
-    border: 1px solid gray;
+    border: 2px solid gray;
     text-transform: capitalize;
 }
 .cart table thead{
@@ -892,6 +879,10 @@ ul{
 }
 /*9. services-part end here*/
 /*10. invoice-part start here*/
+.all-appointment h2, .all-services h2{
+    margin-bottom: -25px;
+}
+
 #invoice{
     padding: 30px;
 }
@@ -907,11 +898,11 @@ ul{
     border-bottom: 1px solid #3989c6
 }
 .invoice .company-details {
-    text-align: right
+    text-align: right;
 }
 .invoice .company-details .name {
     margin-top: 0;
-    margin-bottom: 0
+    margin-bottom: 0;
 }
 .invoice .contacts {
     margin-bottom: 20px
@@ -921,26 +912,27 @@ ul{
 }
 .invoice .invoice-to .to {
     margin-top: 0;
-    margin-bottom: 0
+    margin-bottom: 0;
+    text-transform: capitalize;
 }
 .invoice .invoice-details {
     text-align: right
 }
 .invoice .invoice-details .invoice-id {
     margin-top: 0;
-    color: #3989c6
+    color: #06AEAE
 }
 .invoice main {
     padding-bottom: 50px
 }
 .invoice main .thanks {
-    margin-top: -11rem;
-    font-size: 2em;
-    margin-bottom: 50px
+    font-size: 15px;
+    margin-bottom: 50px;
+    margin-top: -9.5rem;
 }
 .invoice main .notices {
     padding-left: 6px;
-    border-left: 6px solid #3989c6
+    border-left: 6px solid #06AEAE
 }
 .invoice main .notices .notice {
     font-size: 1.2em
@@ -964,7 +956,7 @@ ul{
 .invoice table td h3 {
     margin: 0;
     font-weight: 400;
-    color: #3989c6;
+    color: #06AEAE;
     font-size: 1.2em
 }
 .invoice table .qty,.invoice table .total,.invoice table .unit {
@@ -974,13 +966,13 @@ ul{
 .invoice table .no {
     color: #fff;
     font-size: 1.6em;
-    background: #3989c6
+    background: #06AEAE
 }
 .invoice table .unit {
     background: #ddd
 }
 .invoice table .total {
-    background: #3989c6;
+    background: #06AEAE;
     color: #fff
 }
 .invoice table tbody tr:last-child td {
@@ -999,9 +991,9 @@ ul{
     border-top: none
 }
 .invoice table tfoot tr:last-child td {
-    color: #3989c6;
+    color: #06AEAE;
     font-size: 1.4em;
-    border-top: 1px solid #3989c6
+    border-top: 1px solid #06AEAE
 }
 .invoice table tfoot tr td:first-child {
     border: none
@@ -1014,7 +1006,77 @@ ul{
     padding: 8px 0
 }
 /*10. invoice-part end here*/
-/*11.footer-area start here*/
+/*11. contact-part start here*/
+.contact-area{
+    text-transform: capitalize;
+    color: #57CACA;
+    font-size: 25px;
+    text-shadow: 2px 2px 3px #333;;
+}
+.form4 {
+    background-color: #4DB7FE;
+    background-size: cover
+}
+
+.top {
+    padding-top: 100px;
+    padding-bottom: 100px
+}
+
+.form-bg {
+    background: rgba(68, 68, 65, 0.77);
+    padding: 20px
+}
+
+.form {
+    background-color: white !important;
+    padding: 20px
+}
+
+.form-group {
+    margin-bottom: 20px
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0
+}
+
+.form-control {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #61615e;
+    background: transparent;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s
+}
+
+button.btn {
+    display: block;
+    padding: 10px 15px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    margin: 30px 0px
+}
+
+.btn-blue {
+    background-color: #57CACA;
+    color: #fff;
+    border: 1px solid #57CACA
+}
+/*11. contact-part end here*/
+/*12.footer-area start here*/
 .footer-area{
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#e1ffff+0,e1ffff+7,e1ffff+12,fdffff+18,e6f8fd+30,c8eefb+54,bee4f8+75,b1d8f5+100 */
     background: #e1ffff; /* Old browsers */
@@ -1108,7 +1170,7 @@ ul{
     padding: 5px;
     display: inline-block;
 }
-.footer-right a:hover {
+.footer-right a:hover, .header-icon a:hover {
     text-decoration: none;
     background-color: #06AEAE;
     border-radius: 0px 20px;

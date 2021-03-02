@@ -9,8 +9,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -22,8 +26,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -35,8 +43,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -48,8 +60,12 @@
                     <div class="col-xl-12 h-300">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>
+                            <nav aria-label="breadcrumb" class="text-center">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+                                </ol>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -62,14 +78,6 @@
         <div class="container">
             <div class="invoice-part">
                 <div id="invoice">
-
-                    <div class="toolbar hidden-print">
-                        <div class="text-right">
-                            <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
-                            <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>
-                        </div>
-                        <hr>
-                    </div>
                     <div class="invoice overflow-auto">
                         <div style="min-width: 600px">
                             <header>
@@ -82,7 +90,7 @@
                                     </div>
                                     <div class="col company-details">
                                         <h2 class="name">
-                                            <a target="_blank" href="#">
+                                            <a target="_blank" href="#" style="color: #06AEAE; font-weight: 800;">
                                             {{config('masuma.company')}}
                                             </a>
                                         </h2>
@@ -166,10 +174,10 @@
                                         </tr>
                                     </tfoot>
                                 </table>
-                                <div class="thanks mt-2">
-                                    <h3>Payment Method: {{$invoice->paymentType == 'Cash' ? 'Cash On Delivery' : 'bKash'}}</h3>
+                                <div class="thanks">
+                                    <h4>Payment Method: {{$invoice->paymentType == 'Cash' ? 'Cash On Delivery' : 'bKash'}}</h4>
                                     <h4>bKash <span>: 017000000</span></h4>
-                                    <h4 style="margin-top: 40px;"><span style="color: #3989c6; font-size: 22px;">In Word:</span>  {{in_word($grand_total)}}</h4>
+                                    <h4 style="margin-top: 40px;"><span style="color: #06AEAE; font-size: 22px;">In Word:</span>  {{in_word($grand_total)}}</h4>
                                 </div>
                             </main>
                             <footer>

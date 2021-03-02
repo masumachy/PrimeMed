@@ -138,6 +138,13 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="{{action('Admin\ServicesController@services_list')}}" class=" waves-effect waves-block">
+                            <i class="material-icons">today</i>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    
+                    <li>
                         <a class="text-danger" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">

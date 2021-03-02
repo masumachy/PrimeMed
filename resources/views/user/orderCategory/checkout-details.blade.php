@@ -18,8 +18,9 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\OrderCategoryController@order_category')}}">Shop</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\OrderCategoryController@cart_table')}}">Cart</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">CheckOut</li>
                                 </ol>
                             </nav>
@@ -36,8 +37,9 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\OrderCategoryController@order_category')}}">Shop</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\OrderCategoryController@cart_table')}}">Cart</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">CheckOut</li>
                                 </ol>
                             </nav>
@@ -54,8 +56,9 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\OrderCategoryController@order_category')}}">Shop</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\OrderCategoryController@cart_table')}}">Cart</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">CheckOut</li>
                                 </ol>
                             </nav>
@@ -72,8 +75,8 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\OrderCategoryController@order_category')}}">Shop</a></li>
                                   <li class="breadcrumb-item active" aria-current="page">CheckOut</li>
                                 </ol>
                             </nav>

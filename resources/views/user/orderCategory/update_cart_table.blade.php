@@ -1,5 +1,5 @@
 @extends('layouts.user_master')
-@section('title','Cart-Table')
+@section('title','Update-Cart-Table')
 @section('content')
     <!--banner part start here-->
      <div class="banner-area owl-carousel h-300">
@@ -108,6 +108,7 @@
                                       @endphp
                                       <tr>
                                             <td>{{$item->product['name']}}</td>
+                                            
                                             <td><input type="number" value="{{$item->quantity}}" name="quantity"></td>
                                             <td>{{money($item->price)}}</td>
                                             <td>{{money($total)}}</td>

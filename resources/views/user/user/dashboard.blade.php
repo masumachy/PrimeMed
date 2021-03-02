@@ -14,9 +14,8 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                                 </ol>
                             </nav>
                         </div>
@@ -32,9 +31,8 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                                 </ol>
                             </nav>
                         </div>
@@ -50,9 +48,8 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                                 </ol>
                             </nav>
                         </div>
@@ -68,9 +65,8 @@
                             <h4>welcome</h4>
                             <nav aria-label="breadcrumb" class="text-center">
                                 <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                  <li class="breadcrumb-item"><a href="#">Shop</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                                 </ol>
                             </nav>
                         </div>
@@ -99,6 +95,7 @@
                                             <th scope="col">Total price</th>
                                             <th scope="col">payment method</th>
                                             <th scope="col">status</th>
+                                            <th scope="col">details</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -107,9 +104,39 @@
                                                 <td>{{$item->address}}</td>  
                                                 <td>{{$item->contactNo}}</td>
                                                 <td>{{$item->deliveryDate}}</td>
-                                                <td>{{$item->paidAmount}}</td>
+                                                <td>{{money($item->paidAmount)}}</td>
                                                 <td>{{$item->paymentType}}</td>
-                                                <td><a href="{{action('User\LoginController@invoice',['id'=>$item->id])}}" class="btn btn-info btn-sm">view</a></td>
+                                                <td>{{$item->orderStatus}}</td>
+                                                <td><a  style="font-size: 12px" href="{{action('User\LoginController@invoice',['id'=>$item->id])}}" class="btn btn-info btn-sm">view</a>
+                                                <a  style="font-size: 12px" href="" class="btn btn-danger">Del</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="all-appointment">
+                            <h2>your appointment</h2>
+                            <div class="cart text-left">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                            <th scope="col">dr name</th>
+                                            <th scope="col">specialist</th>
+                                            <th scope="col">status</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($appointment as $item)
+                                            <tr>
+                                                <td>{{$item->doctor['name']}}</td>
+                                                <td>{{$item->doctor['specialist']}}</td>
+                                                <td>{{$item->status}}</td>  
                                             </tr>
                                         @endforeach
                                       
@@ -118,7 +145,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2"></div>
+                    <div class="col-xl-6">
+                        <div class="all-services">
+                            <h2>your services</h2>
+                            <div class="cart text-left">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                            <th scope="col">Services</th>
+                                            <th scope="col">Position</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($services as $item)
+                                            <tr>
+                                                <td>{{$item->services}}</td>
+                                                <td>{{$item->adminSays}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

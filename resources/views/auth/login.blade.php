@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-body">
+                    <i class="fas fa-user text-center pb-30"><h2>Prime<span style="color: teal">Med</span></h2></i>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 

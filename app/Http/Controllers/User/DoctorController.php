@@ -7,11 +7,19 @@ use App\ProductCategory;
 use App\SubDepartment;
 use App\Appointment;
 use App\AllLab;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class DoctorController extends Controller
 {
+    public function all_doctor()
+    {
+        $labs = AllLab::all();
+        $depts = Department::all();
+        $doctors = Doctor::paginate(10);
+        return view('user.doctor.all_doctor',compact('depts','labs','doctors'));
+    }
     public function dept_wise($id){
         $labs = AllLab::all();
         $depts = Department::all();
@@ -40,7 +48,9 @@ class DoctorController extends Controller
             'patient_Age' => 'required',
             'number' => 'required',
         ]);
+        $userID = Auth::user()->id;
         $appointment = new Appointment();
+        $appointment->user_id = $userID;
         $appointment->doctor_id = $request->doctor_id;
         $appointment->name = $request->name;
         $appointment->address = $request->address;

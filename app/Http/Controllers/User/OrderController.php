@@ -78,7 +78,7 @@ class OrderController extends Controller
                             throw $e;
                         }
 
-                        return redirect()->to('/')->with(['message' => 'Your order placed successfully!!']);
+                        return redirect()->to('user/order-category')->with(['message' => 'Your order placed successfully!!']);
                 }else {
                     return back()->with(['message' => 'Please Select Proper Delivery Date and Time.!!']);
             }
