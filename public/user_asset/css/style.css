@@ -204,6 +204,18 @@ ul{
 .menu ul li ul li a i {
     padding-left: 15px;
 }
+/*Burger*/
+.burger div{
+    width: 25px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+}
+.burger{
+    display: none;
+}
+
+
 /*3.header-area part end here*/
 
 /*4.Banner-area part start here*/
@@ -216,8 +228,8 @@ ul{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    color: #fff;
-    width: 50%;
+    color: #ffffff;
+    width: 100%;
 }
 
 .banner h2 {
@@ -503,7 +515,7 @@ ul{
 }
 /*5.team-area end here*/
 /*6.appointment part start here*/
-.appointment h3, .all-appointment h2, .all-services h2 {
+.appointment h3, .all-appointment h2, .all-services h2, .all-cart h2, .all-lab-report h2, .all-prescription h2, .all-quantity h2 {
     text-align: center;
     text-transform: capitalize;
     font-style: italic;
@@ -790,7 +802,7 @@ ul{
 /*7.6.cart part end here*/
 /*7.order way part end here*/
 /*8.lab info part start here*/
-.lab-info h3, .all-cart h2 {
+.lab-info h3 {
     text-align: center;
     text-transform: capitalize;
     font-size: 30px;
@@ -889,7 +901,7 @@ ul{
 .invoice {
     position: relative;
     background-color: #FFF;
-    min-height: 680px;
+    /*min-height: 680px;*/
     padding: 15px
 }
 .invoice header {
@@ -1075,6 +1087,9 @@ button.btn {
     color: #fff;
     border: 1px solid #57CACA
 }
+.map iframe {
+    width: 100%;
+}
 /*11. contact-part end here*/
 /*12.footer-area start here*/
 .footer-area{
@@ -1183,11 +1198,25 @@ button.btn {
     line-height: 1.4;
     padding-top: 15px;
 }
-/*9.footer-area end here*/
-/*10.error-area start here*/
+/*12.footer-area end here*/
+/*13.error-area start here*/
 .error {
     text-transform: capitalize;
     font-size: 30px;
     margin-top: 10em;
 }
-/*10.error-area end here*/
+/*13.error-area end here*/
+/*scrol area*/
+#scrolltop {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    background-color: teal;
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+}

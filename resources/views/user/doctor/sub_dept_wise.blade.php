@@ -92,7 +92,7 @@
                 <div class="row">
                    @if (count($doctors) > 0)
                    @foreach ($doctors as $doctor)
-                   <div class="col-xl-4">
+                   <div class="col-lg-4 col-md-6">
                        <div class="single-medicine single-appointment">
                            <img src="{{asset('public/user_asset')}}/images/medicine/dr.jpg" alt="">
                            <p><span>name:</span>{{$doctor->name}}</p>

@@ -8,6 +8,7 @@ use App\AllLab;
 use App\TempOrder;
 use App\OrderFormPrescription;
 use App\OrderWithName;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use App\Http\Controllers\Controller;
@@ -36,8 +37,10 @@ class OrderCategoryController extends Controller
             'medicineQuantity' => 'required',
             'imageName' =>'required',
         ]);
+        $userID = Auth::user()->id;
         $order = new OrderFormPrescription();
         $order->name = $request->name;
+        $order->user_id = $userID;
         $order->email = $request->email;
         $order->mobileNo = $request->mobileNo;
         $order->deliveryAddress = $request->deliveryAddress;
@@ -60,8 +63,10 @@ class OrderCategoryController extends Controller
             'deliveryAddress' => 'required',
             'medicineQuantity' => 'required',
         ]);
+        $userID = Auth::user()->id;
         $order = new OrderWithName();
         $order->name = $request->name;
+        $order->user_id = $userID;
         $order->email = $request->email;
         $order->mobileNo = $request->mobileNo;
         $order->deliveryAddress = $request->deliveryAddress;

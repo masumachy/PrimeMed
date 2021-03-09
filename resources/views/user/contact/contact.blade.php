@@ -78,7 +78,7 @@
         <div class="container">
             <h2 class="text-center pb-30">contact us</h2>
             <div class="row">
-                <div class="col-md-7 col-md-offset-2">
+                <div class="col-md-6">
                     <div class="form-bg">
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -104,9 +104,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-6">
                     <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.3194713676066!2d91.88160281460576!3d24.88708218404131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751ab33dae5f21d%3A0x7f4f2c64c8d4d0b0!2sUposhohar%20Plaza!5e0!3m2!1sen!2sbd!4v1614353586547!5m2!1sen!2sbd" width="600" height="490" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.3194713676066!2d91.88160281460576!3d24.88708218404131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3751ab33dae5f21d%3A0x7f4f2c64c8d4d0b0!2sUposhohar%20Plaza!5e0!3m2!1sen!2sbd!4v1614353586547!5m2!1sen!2sbd" width="" height="490" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         
                     </div>
                 </div>

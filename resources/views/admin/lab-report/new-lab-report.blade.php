@@ -53,7 +53,37 @@
                                             <td>{{$item->phoneNo}}</td>
                                             <td>{{$item->age}}</td>
                                             <td><img width= "70" height="50" src="{{asset('public/uploads/labReport/'.$item->labTestRecipte)}}" alt=""></td>
-                                            <td class="text-right"><a href="" onclick="return confirm('Do you want to check this Report?')" class="btn btn-sm btn-danger" style="margin-left: 10px">Check</a></td>
+                                            <td class="text-right">  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$item->id}}" data-whatever="@mdo">Approved</button> || <a href="{{action('Admin\LabReportController@deleteLabReport',['id'=>$item->id])}}" onclick="return confirm('Do you want to delete this Report?')" class="btn btn-sm btn-danger" style="margin-left: 10px">Done</a></td>
+                                        
+                                            <div class="modal fade" id="exampleModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <form method="post" class="" action="{{action('Admin\LabReportController@update')}}">
+                                                                @csrf
+                                                                <input type="hidden" name="id" value="{{$item->id}}">
+                                                                <div class="form-group order-form text-left">
+                                                                    <label for="recipient-name" class="col-form-label">Order Status</label><br>
+                                                                    <select name="status" id="">
+                                                                        <option value="Pending" {{$item->orderStatus == 'Pending' ? 'selected' : ''}}>Pending</option>
+                                                                        <option value="On the Way" {{$item->orderStatus == 'On the Way' ? 'selected' : ''}}>On the Way</option>
+                                                                        <option value="Ready" {{$item->orderStatus == 'Ready' ? 'selected' : ''}}>Ready</option>
+                                                                        <option value="Delivery Done" {{$item->orderStatus == 'Delivery Done' ? 'selected' : ''}}>Delivery Done</option>
+                                                                        <option value="On Process" {{$item->orderStatus == 'On Process' ? 'selected' : ''}}>On Process</option>
+                                                                    </select>
+                                                                </div>
+
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </tr>
                                         @endforeach
                                     </tbody>

@@ -15,4 +15,4 @@ $('.banner-area').owlCarousel({
             items:1
         }
     }
-})
+});

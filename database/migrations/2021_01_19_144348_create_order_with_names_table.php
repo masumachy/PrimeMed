@@ -20,6 +20,10 @@ class CreateOrderWithNamesTable extends Migration
             $table->string('mobileNo',50);
             $table->text('deliveryAddress');
             $table->text('medicineQuantity');
+            $table->string('status',50)->default('Pending');
+            $table->double('totalPrice')->default(0);
+            $table->unsignedBigInteger('user_id')->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('No Action')->onUpdate('No Action');
             $table->timestamps();
         });
     }

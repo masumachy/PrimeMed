@@ -80,26 +80,26 @@
             <div class="container">
                 <div class="services">
                     <div class="row services">
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part text-center">
                                 <h2>call for ambulance</h2>
                                 <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
                                 <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part">
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/ambulance2.jpg" alt="">
                             </div>
                         </div>
                     </div> 
                     <div class="row services pt-30 pb-30">
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part">
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/blood.jpg" alt="">
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part text-center">
                                 <h2>look for blood donation</h2>
                                 <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
@@ -108,26 +108,26 @@
                         </div>
                     </div>
                     <div class="row services pt-30 pb-30">
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part text-center">
                                 <h2>search for ICU vacancy</h2>
                                 <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
                                 <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part">
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/ICU.jpg" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="row services pt-30 pb-30">
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part">
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/oxygen2.jpg" alt="">
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part text-center">
                                 <h2>emergency need for oxygen supply</h2>
                                 <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
@@ -136,14 +136,14 @@
                         </div>
                     </div> 
                     <div class="row services pt-30">
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part text-center">
                                 <h2>seek for primary care</h2>
                                 <h4>contact here-> <a href="tel:0123456789">0123456789</a></h4>
                                 <a href="{{action('User\ServicesController@services_form')}}" class="box-btn">Apply</a>
                             </div>
                         </div>
-                        <div class="col-xl-6">
+                        <div class="col-md-6">
                             <div class="single-service-part">
                                 <img src="{{asset('public/user_asset')}}/images/otherServices/primary.png" alt="">
                             </div>

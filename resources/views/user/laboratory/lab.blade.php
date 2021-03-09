@@ -101,7 +101,7 @@
                 </div>
                 <div class="row">
                     @foreach ($labinfo as $key => $item)
-                    <div class="col-xl-6">
+                    <div class="col-lg-6">
                         <div class="table lab-table @if($key % 2 == 0) odd-bg @else even-bg @endif">
                             <h4>{{$item->name}}</h4>
                             <table>

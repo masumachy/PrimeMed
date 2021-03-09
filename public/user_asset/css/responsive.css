@@ -10,6 +10,10 @@ Width: 970px
     .team-social a {
         width: 28px;
     }
+    .lab-table {
+        width: 455px;
+    }
+    
 }
 /* Tablet Layout: 768px. 
 
@@ -61,16 +65,31 @@ Width: 750px
     .section-title {
         margin: -25px 0px;
     }
+    .single-appointment{
+        margin-bottom: 20px;
+    }
+    .form-left{
+        margin-bottom: 15px;
+    }
+    .order-by {
+        margin-bottom: 15px;
+    }
+    .single-service-part h2{
+        font-size: 23px;
+    }
+    .single-service-part h4{
+        font-size: 20px;
+    }
+    .middle{
+        margin-top: -12rem;
+    }
+    
+    
 }
-
-
-
 /* Mobile Layout: 320px. 
-
 Checking Point: 320px
 Width: 300px
 */
-
 @media only screen and (max-width: 767px) {
     .container{
         width: 300px;
@@ -112,6 +131,62 @@ Width: 300px
     .single-form {
         margin-top: 25px;
     }
+    .single-appointment{
+        margin-bottom: 20px;
+    }
+    .banner {
+        width: 70%;
+    }
+    .order-by {
+        margin-bottom: 15px;
+    }
+    .lab-info h3{
+        font-size: 15px;
+        text-align: left;
+    }
+    .lab-table {
+        width: 270px;
+    }
+    .table table {
+        text-transform: capitalize;
+        padding: 0 5px;
+        font-size: 13px;
+    }
+    .single-service-part h2{
+        font-size: 23px;
+    }
+    .single-service-part h4{
+        font-size: 20px;
+    }
+    .map {
+        margin-top: 20px;
+    }
+    table.table tr {
+        font-size: 15px;
+    }
+    .all-appointment h2, .all-services h2, .all-cart h2, .all-lab-report h2{
+        font-size: 20px;
+    }
+    .invoice .company-details {
+        text-align: left;
+    }
+    main {
+        font-size: 15px;
+    }
+    .invoice table td, .invoice table th {
+        padding: 5px;
+    }
+    .invoice table th {
+        white-space: normal;
+    }
+    .thanks h4 {
+        font-size: 16px;
+    }
+    .middle{
+        margin-top: -12rem;
+    }
+    
+    
 }
 
 /* Wide Mobile Layout: 480px. 
@@ -130,4 +205,41 @@ Width: 450px
     .search-btn button {
         top: 0px;
     }
+    .single-appointment{
+        margin-bottom: 20px;
+    }
+    .order-by {
+        margin-bottom: 15px;
+    }
+    .lab-table {
+        width: 455px;
+    }
+    .single-service-part h2{
+        font-size: 23px;
+    }
+    .single-service-part h4{
+        font-size: 20px;
+    }
+    .map {
+        margin-top: 20px;
+    }
+    table.table tr {
+        font-size: 15px;
+    }
+    .invoice .company-details {
+        text-align: left;
+    }
+    main {
+        font-size: 15px;
+    }
+    .invoice table td, .invoice table th {
+        padding: 5px;
+    }
+    .middle {
+        margin-top: -12rem;
+    }
+    .thanks h4 {
+        font-size: 16px;
+    }
+    
 }

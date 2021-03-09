@@ -20,6 +20,9 @@ class CreateLabReportsTable extends Migration
             $table->string('phoneNo',20);
             $table->string('age',20);
             $table->string('labTestRecipte',150)->default('default.jpg');
+            $table->unsignedBigInteger('user_id')->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('No Action')->onUpdate('No Action');
+            $table->string('status', 20)->default('Pending');
             $table->timestamps();
         });
     }

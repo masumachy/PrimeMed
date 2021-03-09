@@ -84,7 +84,7 @@
                 <h3>order form</h3>
                 <p>if you don't get medicine or other product from search then</p>
                 <div class="row">
-                    <div class="col-xl-5">
+                    <div class="col-lg-5">
                         <div class="order-form-left">
                             <h3>upload your prescription</h3>
                             @if ($errors->any())
@@ -115,12 +115,12 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-xl-2 text-center">
+                    <div class="col-lg-2 text-center">
                         <div class="middle">
                             <h1>OR</h1>
                         </div>
                     </div>
-                    <div class="col-xl-5">
+                    <div class="col-lg-5">
                         <div class="order-form-right">
                             <h3>type name & quantity</h3>
                             @if ($errors->any())

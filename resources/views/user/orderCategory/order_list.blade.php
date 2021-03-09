@@ -81,32 +81,32 @@
         <div class="container">
             <div class="order-way">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-6">
                         <div class="order-by">
                             <i class="fas fa-globe-americas"></i>
                             <span>order online</span>
                             <a href="{{action('User\OrderCategoryController@order_form')}}">form</a>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-6">
                         <div class="order-by">
                             <i class="fas fa-comments"></i>
                             <span>send an sms</span>
-                            <a href="">01712345678</a>
+                            <a href="sms://+14035550185?body=I%27m%20interested%20in%20your%20product.%20Please%20contact%20me.">01712345678</a>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md-6">
                         <div class="order-by">
                             <i class="fab fa-facebook"></i>
                             <span>order on facebook</span>
                             <a href="">inbox us</a>
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-md 6">
                         <div class="order-by">
                             <i class="fas fa-envelope"></i>
                             <span>send an email</span>
-                            <a href="">primemed@gmail.com</a>
+                            <a href="mailto:primemed@gmail.com">primemed@gmail.com</a>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,6 @@
                                 @foreach ($productcat as $item)
                                     <li><a href="{{action('User\OrderCategoryController@category_wise',['id' => $item->id])}}">{{$item->name}}</a></li>
                                 @endforeach
-                                
                             </ul>
                         </div>
                     </div>
@@ -172,7 +171,7 @@
                 $.each(result, function( i, row ) {
     
     
-                    showData += '<div class="col-xl-4"><div class="sub-order text-center"><img src="../public/uploads/product/'+row.imageName+'" alt=""><h4>name: <span>'+row.name+'</span></h4><h4>type: <span>'+row.group+'</span></h4><h4>dose: <span>'+row.dose+'</span></h4><h4>price: <span>TK. '+row.price+' (per pata)</span></h4><h4><a class="cart_minus" href="#" data-id="'+row.id+'" data-price="'+row.price+'"><i class="fas fa-minus"></i></a><span>0(pata)</span><a data-id="'+row.id+'" data-price="'+row.price+'" class="cart_plus" href=""><i class="fas fa-plus"></i></a></h4></div></div>'
+                    showData += '<div class="col-md-4 col-sm-6"><div class="sub-order text-center"><img src="../public/uploads/product/'+row.imageName+'" alt=""><h4>name: <span>'+row.name+'</span></h4><h4>type: <span>'+row.group+'</span></h4><h4>dose: <span>'+row.dose+'</span></h4><h4>price: <span>TK. '+row.price+' (per pata)</span></h4><h4><a class="cart_minus" href="#" data-id="'+row.id+'" data-price="'+row.price+'"><i class="fas fa-minus"></i></a><span>0(pata)</span><a data-id="'+row.id+'" data-price="'+row.price+'" class="cart_plus" href=""><i class="fas fa-plus"></i></a></h4></div></div>'
                 });
                 $('#productLoad').html(showData);
                 cart();

@@ -19,8 +19,12 @@ class CreateOrderFormsPrescriptionsTable extends Migration
             $table->string('email',50)->nullable();
             $table->string('mobileNo',50);
             $table->text('deliveryAddress');
-            $table->string('imageName',50)->default('default.jpg');
+            $table->string('imageName',100)->default('default.jpg');
             $table->text('medicineQuantity');
+            $table->string('status',50)->default('Pending');
+            $table->double('totalPrice')->default(0);
+            $table->unsignedBigInteger('user_id')->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('No Action')->onUpdate('No Action');
             $table->timestamps();
         });
     }

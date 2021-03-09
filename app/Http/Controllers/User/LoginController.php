@@ -9,6 +9,9 @@ use App\AllLab;
 use App\Order;
 use App\Appointment;
 use App\Services;
+use App\LabReport;
+use App\OrderFormPrescription;
+use App\OrderWithName;
 use Auth;
 class LoginController extends Controller
 {
@@ -25,6 +28,9 @@ class LoginController extends Controller
         $orders = Order::where('user_id',Auth::user()->id)->get();
         $appointment = Appointment::where('user_id',Auth::user()->id)->get();
         $services = Services::where('user_id',Auth::user()->id)->get();
-        return view('user.user.dashboard',compact('depts','labs','orders','appointment','services'));
+        $labReport = LabReport::where('user_id',Auth::user()->id)->get();
+        $orderprescription = OrderFormPrescription::where('user_id',Auth::user()->id)->get();
+        $ordername = OrderWithName::where('user_id',Auth::user()->id)->get();
+        return view('user.user.dashboard',compact('depts','labs','orders','appointment','services','labReport','orderprescription','ordername'));
     }
 }

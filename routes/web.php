@@ -25,6 +25,9 @@ Route::group(['middleware'=>'auth'],function(){
     // shop
     Route::get('user/checkout-details','User\OrderController@checkout_details');
     Route::post('save-cart','User\OrderController@savecart');
+    //shop-form prescription and medicine details
+    Route::post('save-order','User\OrderCategoryController@save');
+    Route::post('save-order-Name','User\OrderCategoryController@saveName');
     // services
     Route::post('save-services','User\ServicesController@save');
     
@@ -79,9 +82,11 @@ Route::group(['middleware'=>'auth'],function(){
             /*----------------------Order with Prescription---------------------- */
             Route::get('order-with-prescription','Admin\OrderController@prescription_list');
             Route::get('delete-prescription-list/{id}','Admin\OrderController@delete');
+            Route::post('update-prescription-list','Admin\OrderController@updateprescription');
             /*----------------------Order with Medicine Details---------------------- */
             Route::get('order-with-name','Admin\OrderController@medicine_name_list');
-            Route::get('delete-name-list/{id}','Admin\OrderController@deleteName');
+            Route::get('delete-name-list/{id}','Admin\OrderController@deleteName'); 
+            Route::post('update-name-list','Admin\OrderController@updateName'); 
             /*----------------------Order with Cart---------------------- */
             Route::get('order-with-cart','Admin\OrderController@checkout_list');
             Route::post('update-status','Admin\OrderController@update');
@@ -111,6 +116,9 @@ Route::group(['middleware'=>'auth'],function(){
             Route::get('delete-sub-lab-info/{id}','Admin\SubLabInfoController@delete');
             /*----------------------LabReport--------------------- */
             Route::get('new-lab-report','Admin\LabReportController@new_lab_report');
+            Route::get('delete-lab-report/{id}','Admin\LabReportController@deleteLabReport');
+            Route::post('update-lab-report','Admin\LabReportController@update');
+            
             /*----------------------Services--------------------- */
             Route::get('services-list','Admin\ServicesController@services_list');
             Route::post('update-services','Admin\ServicesController@update');
@@ -132,8 +140,6 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('category-wise-product/{id}','User\OrderCategoryController@category_wise');
     Route::get('search','User\OrderCategoryController@itemSearch');
     Route::get('order-form','User\OrderCategoryController@order_form');
-    Route::post('save-order','User\OrderCategoryController@save');
-    Route::post('save-order-Name','User\OrderCategoryController@saveName');
     Route::get('cart-table','User\OrderCategoryController@cart_table');
     Route::get('cart-table/all-delete','User\OrderCategoryController@all_cart_delete');
     Route::get('cart-table/delete/{id}','User\OrderCategoryController@cart_delete');
@@ -151,6 +157,8 @@ Route::group(['middleware'=>'auth'],function(){
     /*----------------------User---------------------- */
     Route::get('invoice/{id}','User\LoginController@invoice');
     Route::get('user-dashboard','User\LoginController@dashboard');
+
+    Route::get('blank','User\BlankController@blank');
 
 
     //========== Temp Orders==============

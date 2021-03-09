@@ -78,7 +78,7 @@
     <div class="container">
         <div class="form">
             <div class="row  form-instruction">
-                <div class="col-xl-6">
+                <div class="col-md-6">
                     <div class="doctor-details text-center">
                         <img src="{{asset('public/user_asset')}}/images/medicine/dr.jpg" alt="">
                         <p><span>name:</span>{{$appointment->name}}</p>
@@ -94,7 +94,7 @@
                     </div>
                     
                 </div>
-                <div class="col-xl-6">
+                <div class="col-md-6">
                     <div class="single-form">
                         @if ($errors->any())
                             <div class="alert alert-danger">

@@ -6,6 +6,7 @@ use App\ProductCategory;
 use App\AllLab;
 use App\LabInfo;
 use App\LabReport;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -31,8 +32,10 @@ class LaboratoryController extends Controller
             'age' => 'required',
             'labTestRecipte' => 'required',
         ]);
+        $userID = Auth::user()->id;
         $labReport = new LabReport();
         $labReport->patientName = $request->patientName;
+        $labReport->user_id = $userID;
         $labReport->deliveryAddress = $request->deliveryAddress;
         $labReport->phoneNo = $request->phoneNo;
         $labReport->age = $request->age;

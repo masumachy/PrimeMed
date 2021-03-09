@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->double('deliveryCharge')->default(0);
             $table->double('discount')->default(0);
             $table->string('paymentType', 50)->default('Cash');
-            $table->string('transactionID', 50);
+            $table->string('transactionID', 50)->nullable();
             $table->string('paymentStatus', 20)->default('Unpaid');
             $table->string('orderStatus', 20)->default('Pending');
             $table->string('orderType', 30)->default('General');

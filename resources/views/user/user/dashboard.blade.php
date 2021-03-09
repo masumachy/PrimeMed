@@ -82,18 +82,14 @@
             <div class="cart-table">
                 <div class="row">
                     
-                    <div class="col-xl-12 text-center">
+                    <div class="col-lg-6 text-center">
                         <div class="all-cart">
                             <h2>your order</h2>
                             <div class="cart text-left">
                                 <table class="table">
                                     <thead>
                                       <tr>
-                                            <th scope="col">delivery address</th>
-                                            <th scope="col">mobile no</th>
-                                            <th scope="col">delivery date</th>
                                             <th scope="col">Total price</th>
-                                            <th scope="col">payment method</th>
                                             <th scope="col">status</th>
                                             <th scope="col">details</th>
                                       </tr>
@@ -101,11 +97,7 @@
                                     <tbody>
                                         @foreach ($orders as $item)
                                             <tr>
-                                                <td>{{$item->address}}</td>  
-                                                <td>{{$item->contactNo}}</td>
-                                                <td>{{$item->deliveryDate}}</td>
                                                 <td>{{money($item->paidAmount)}}</td>
-                                                <td>{{$item->paymentType}}</td>
                                                 <td>{{$item->orderStatus}}</td>
                                                 <td><a  style="font-size: 12px" href="{{action('User\LoginController@invoice',['id'=>$item->id])}}" class="btn btn-info btn-sm">view</a>
                                                 <a  style="font-size: 12px" href="" class="btn btn-danger">Del</a>
@@ -117,9 +109,81 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="all-lab-report">
+                            <h2>your Report Delivery</h2>
+                            <div class="cart text-left">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                            <th scope="col">Patient Name</th>
+                                            <th scope="col">status</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($labReport as $item)
+                                            <tr>
+                                                <td>{{$item->patientName}}</td>
+                                                <td>{{$item->status}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-6">
+                    
+                    <div class="col-lg-6 text-center">
+                        <div class="all-prescription">
+                            <h2>order by prescription</h2>
+                            <div class="cart text-left">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                            <th scope="col">Total price</th>
+                                            <th scope="col">status</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($orderprescription as $item)
+                                            <tr>
+                                                <td>{{money($item->totalPrice)}}</td>
+                                                <td>{{$item->status}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <div class="all-quantity">
+                            <h2>order by quantity</h2>
+                            <div class="cart text-left">
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                            <th scope="col">total price</th>
+                                            <th scope="col">status</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($ordername as $item)
+                                            <tr>
+                                                <td>{{money($item->totalPrice)}}</td>
+                                                <td>{{$item->status}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
                         <div class="all-appointment">
                             <h2>your appointment</h2>
                             <div class="cart text-left">
@@ -145,7 +209,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6">
+                    <div class="col-lg-6">
                         <div class="all-services">
                             <h2>your services</h2>
                             <div class="cart text-left">

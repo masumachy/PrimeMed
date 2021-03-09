@@ -21,12 +21,35 @@
 @include('shared.user.footer')
 <!--footer-area part end here-->
 
-    <script src="{{asset('public/user_asset')}}/js/jquery.min.js"></script>
-    <script src="{{asset('public/user_asset')}}/js/popper.min.js"></script>
-    <script src="{{asset('public/user_asset')}}/js/bootstrap.min.js"></script>
-    <script src="{{asset('public/user_asset')}}/js/owl.carousel.min.js"></script>
+<a href="#" id="scrolltop">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+    <script src="{{asset('public/user_asset')}}/js/jquery.min.js" ></script>
+    <script src="{{asset('public/user_asset')}}/js/popper.min.js" ></script>
+    <script src="{{asset('public/user_asset')}}/js/bootstrap.min.js" ></script>
+    <script src="{{asset('public/user_asset')}}/js/owl.carousel.min.js" ></script>
     <script src="{{asset('public/user_asset')}}/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 100){
+                    $('#scrolltop').fadeIn();
+                }
+                else{
+                    $('#scrolltop').fadeOut();
+                }
+            });
+            $('#scrolltop').click(function(){
+                $('html, body').animate({
+                    scrollTop:0
+                }, 1000);
+            });
+        });
+    </script>
     @yield('script')
+    
+    
     <script>
         //############################# COOKIE GENERATE #############################
             @if (!Session::has('unique_session'))

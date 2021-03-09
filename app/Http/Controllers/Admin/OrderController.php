@@ -21,6 +21,13 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->to('admin/order-with-prescription');
     }
+    public function updateprescription(Request $request){
+        $order = OrderFormPrescription::find($request->id);
+        $order->status = $request->status;
+        $order->totalPrice = $request->totalPrice;
+        $order->save();
+        return redirect()->to('admin/order-with-prescription');
+    }
     public function medicine_name_list(){
         $order = OrderWithName::paginate(10);
         return view('admin.order.medicine-name-list',compact('order'));
@@ -28,6 +35,13 @@ class OrderController extends Controller
     public function deleteName($id){
         $order = OrderWithName::find($id);
         $order->delete();
+        return redirect()->to('admin/order-with-name');
+    }
+    public function updateName(Request $request){
+        $order = OrderWithName::find($request->id);
+        $order->status = $request->status;
+        $order->totalPrice = $request->totalPrice;
+        $order->save();
         return redirect()->to('admin/order-with-name');
     }
     public function checkout_list()

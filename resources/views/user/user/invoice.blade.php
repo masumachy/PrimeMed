@@ -79,16 +79,16 @@
             <div class="invoice-part">
                 <div id="invoice">
                     <div class="invoice overflow-auto">
-                        <div style="min-width: 600px">
+                        <div style="">
                             <header>
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col-md-3 col-sm-12">
                                             <nav class="logo">
                                                 <a  style="color: #333"  class="navbar-brand" href="{{action('User\HomeController@index')}}">prime<span>med</span></a>
                                             </nav>
                                         
                                     </div>
-                                    <div class="col company-details">
+                                    <div class="col-md-9 col-sm-12 company-details">
                                         <h2 class="name">
                                             <a target="_blank" href="#" style="color: #06AEAE; font-weight: 800;">
                                             {{config('masuma.company')}}
@@ -115,69 +115,73 @@
                                     
                                     </div>
                                 </div>
-                                <table border="0" cellspacing="0" cellpadding="0">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th class="text-left">Product Details</th>
-                                            <th class="text-right">Unit Price</th>
-                                            <th class="text-right">Quantity</th>
-                                            <th class="text-right">TOTAL</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @php
-                                            $i = 1;
-                                        @endphp
-                                        @foreach ($invoice->products as $item)
-                                        @php
-                                            $unit_price = $item->price;
-                                            $quantity = $item->quantity;
-                                            $total = $unit_price * $quantity;
-                                        @endphp
-                                        <tr>
-                                            <td class="no">#{{$i++}}</td>
-                                            <td class="text-left">{{$item->product['name']}}</td>
-                                            <td class="unit">{{money($item->price)}}</td>
-                                            <td class="qty">{{$item->quantity}}</td>
-                                            <td class="total">{{money($total)}}</td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                    @php
-                                        $sub_total = 0;
-                                    @endphp
-                                    @foreach($invoice->products as $item)
-                                        @php
-                                            $sub_total += ($item->price * $item->quantity);
-                                        @endphp
-                                    @endforeach
-                                    @php
-                                        $delivery_charge = config('masuma.deliveryCharge');
-                                        $grand_total = $sub_total + $delivery_charge;
-                                    @endphp
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="2"></td>
-                                            <td colspan="2">SUBTOTAL</td>
-                                            <td>{{money($sub_total)}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2"></td>
-                                            <td colspan="2">SHIPPING</td>
-                                            <td>{{money(config('masuma.deliveryCharge'))}}</td>
-                                        </tr>
-                                        <tr>
-                                            <td colspan="2"></td>
-                                            <td colspan="2">GRAND TOTAL</td>
-                                            <td>{{money($grand_total)}}</td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th class="text-left">Product Details</th>
+                                                    <th class="text-right">Unit Price</th>
+                                                    <th class="text-right">Quantity</th>
+                                                    <th class="text-right">TOTAL</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php
+                                                    $i = 1;
+                                                @endphp
+                                                @foreach ($invoice->products as $item)
+                                                @php
+                                                    $unit_price = $item->price;
+                                                    $quantity = $item->quantity;
+                                                    $total = $unit_price * $quantity;
+                                                @endphp
+                                                <tr>
+                                                    <td class="no">#{{$i++}}</td>
+                                                    <td class="text-left">{{$item->product['name']}}</td>
+                                                    <td class="unit">{{money($item->price)}}</td>
+                                                    <td class="qty">{{$item->quantity}}</td>
+                                                    <td class="total">{{money($total)}}</td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                            @php
+                                                $sub_total = 0;
+                                            @endphp
+                                            @foreach($invoice->products as $item)
+                                                @php
+                                                    $sub_total += ($item->price * $item->quantity);
+                                                @endphp
+                                            @endforeach
+                                            @php
+                                                $delivery_charge = config('masuma.deliveryCharge');
+                                                $grand_total = $sub_total + $delivery_charge;
+                                            @endphp
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="2"></td>
+                                                    <td colspan="2">SUBTOTAL</td>
+                                                    <td>{{money($sub_total)}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"></td>
+                                                    <td colspan="2">SHIPPING</td>
+                                                    <td>{{money(config('masuma.deliveryCharge'))}}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2"></td>
+                                                    <td colspan="2">GRAND TOTAL</td>
+                                                    <td>{{money($grand_total)}}</td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                                 <div class="thanks">
-                                    <h4>Payment Method: {{$invoice->paymentType == 'Cash' ? 'Cash On Delivery' : 'bKash'}}</h4>
+                                    <h4>Payment Method: <br> {{$invoice->paymentType == 'Cash' ? 'Cash On Delivery' : 'bKash'}}</h4>
                                     <h4>bKash <span>: 017000000</span></h4>
-                                    <h4 style="margin-top: 40px;"><span style="color: #06AEAE; font-size: 22px;">In Word:</span>  {{in_word($grand_total)}}</h4>
+                                    <h4 class="in-word" style="margin-top: 50px; text-align:right"><span style="color: #06AEAE; font-size: 22px;">In Word:</span>  {{in_word($grand_total)}}</h4>
                                 </div>
                             </main>
                             <footer>

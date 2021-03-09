@@ -58,35 +58,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
-                            <i class="material-icons">info</i>
-                            <span>Info</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{action('Admin\AllLabController@lab_list')}}" class=" waves-effect waves-block">All Labs</a>
-                            </li>
-                            <li>
-                                <a href="{{action('Admin\LabInfoController@list')}}" class=" waves-effect waves-block">Lab Info</a>
-                            </li>
-                            <li>
-                                <a href="{{action('Admin\SubLabInfoController@list')}}" class=" waves-effect waves-block">Sub Lab Info</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
-                            <i class="material-icons">bug_report</i>
-                            <span>Lab Report</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{action('Admin\LabReportController@new_lab_report')}}" class=" waves-effect waves-block">New Lab Report</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
+
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
                             <i class="material-icons">people</i>
@@ -137,6 +109,37 @@
                             </li>
                         </ul>
                     </li>
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                            <i class="material-icons">info</i>
+                            <span>Info</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{{action('Admin\AllLabController@lab_list')}}" class=" waves-effect waves-block">All Labs</a>
+                            </li>
+                            <li>
+                                <a href="{{action('Admin\LabInfoController@list')}}" class=" waves-effect waves-block">Lab Info</a>
+                            </li>
+                            <li>
+                                <a href="{{action('Admin\SubLabInfoController@list')}}" class=" waves-effect waves-block">Sub Lab Info</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle waves-effect waves-block">
+                            <i class="material-icons">bug_report</i>
+                            <span>Lab Report</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{{action('Admin\LabReportController@new_lab_report')}}" class=" waves-effect waves-block">New Lab Report</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    
                     <li>
                         <a href="{{action('Admin\ServicesController@services_list')}}" class=" waves-effect waves-block">
                             <i class="material-icons">today</i>
