@@ -3,7 +3,7 @@
 @section('content')
     <!--banner part start here-->
      <div class="banner-area owl-carousel h-300">
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/appointment/appointment1.jpg);">
+        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/lab/lab1.jpg);">
             <div class="container h-300">
                 <div class="row h-300">
                     <div class="col-xl-12 h-300">
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/appointment/appointment2.jpg);">
+        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/lab/lab2.jpg);">
             <div class="container h-300">
                 <div class="row h-300">
                     <div class="col-xl-12 h-300">
@@ -39,42 +39,8 @@
                 </div>
             </div>
         </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/banner/slide2.jpg);">
-            <div class="container h-300">
-                <div class="row h-300">
-                    <div class="col-xl-12 h-300">
-                        <div class="banner">
-                            <h4>welcome</h4>
-                            <nav aria-label="breadcrumb" class="text-center">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Lab Info</li>
-                                    <li class="breadcrumb-item active">{{$lab->name}}</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/banner/slide3.jpg);">
-            <div class="container h-300">
-                <div class="row h-300">
-                    <div class="col-xl-12 h-300">
-                        <div class="banner">
-                            <h4>welcome</h4>
-                            <nav aria-label="breadcrumb" class="text-center">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Lab Info</li>
-                                    <li class="breadcrumb-item active">{{$lab->name}}</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+        
     </div>
     <!--banner-area part end here-->
     <!--ibn sina part start here-->

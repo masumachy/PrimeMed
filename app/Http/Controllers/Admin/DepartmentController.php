@@ -41,6 +41,8 @@ class DepartmentController extends Controller
     }
     public function delete($id){
         $dept = Department::find($id);
+        $dept->sub_department()->delete();
+        $dept->doctor()->delete();
         $dept->delete();
         return redirect()->to('admin/list');
     }

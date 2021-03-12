@@ -57,7 +57,7 @@
                                             @endif
                                             </td>
                                             <td class="text-right">
-                                            <a href="{{action('Admin\DoctorController@update_doctor',['id'=>$item->id])}}" class="btn btn-sm btn-primary">Edit</a> || <a onclick="return confirm('are you sure to delete it?')" href="{{action('Admin\DoctorController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Del</a>
+                                            <a href="{{action('Admin\DoctorController@update_doctor',['id'=>$item->id])}}" class="btn btn-sm btn-primary"><i class="material-icons">edit</i></a> || <a onclick="return confirm('are you sure to delete it?')" href="{{action('Admin\DoctorController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger"><i class="material-icons">delete</i></a>
                                             </td>
                                         </tr>
                                         @endforeach

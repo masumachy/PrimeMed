@@ -3,27 +3,8 @@
 @section('content')
     <!--banner part start here-->
      <div class="banner-area owl-carousel h-300">
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/appointment/appointment1.jpg);">
-            <div class="container h-300">
-                <div class="row h-300">
-                    <div class="col-xl-12 h-300">
-                        <div class="banner">
-                            <!--<h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
-                            <a href="" class="box-btn">read more</a>-->
-                            <h4>welcome</h4>
-                            <nav aria-label="breadcrumb" class="text-center">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Shop</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/appointment/appointment2.jpg);">
+        
+        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/shop/shop2.jpg);">
             <div class="container h-300">
                 <div class="row h-300">
                     <div class="col-xl-12 h-300">
@@ -40,7 +21,7 @@
                 </div>
             </div>
         </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/banner/slide2.jpg);">
+        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/shop/shop3.jpg);">
             <div class="container h-300">
                 <div class="row h-300">
                     <div class="col-xl-12 h-300">
@@ -57,23 +38,7 @@
                 </div>
             </div>
         </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/banner/slide3.jpg);">
-            <div class="container h-300">
-                <div class="row h-300">
-                    <div class="col-xl-12 h-300">
-                        <div class="banner">
-                            <h4>welcome</h4>
-                            <nav aria-label="breadcrumb" class="text-center">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Shop</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <!--banner-area part end here-->
     <!--medicine-order-area part start here-->
@@ -137,6 +102,7 @@
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -170,8 +136,7 @@
                 var showData = '';
                 $.each(result, function( i, row ) {
     
-    
-                    showData += '<div class="col-md-4 col-sm-6"><div class="sub-order text-center"><img src="../public/uploads/product/'+row.imageName+'" alt=""><h4>name: <span>'+row.name+'</span></h4><h4>type: <span>'+row.group+'</span></h4><h4>dose: <span>'+row.dose+'</span></h4><h4>price: <span>TK. '+row.price+' (per pata)</span></h4><h4><a class="cart_minus" href="#" data-id="'+row.id+'" data-price="'+row.price+'"><i class="fas fa-minus"></i></a><span>0(pata)</span><a data-id="'+row.id+'" data-price="'+row.price+'" class="cart_plus" href=""><i class="fas fa-plus"></i></a></h4></div></div>'
+                    showData += '<div class="col-md-4 col-sm-6"><div class="sub-order text-center"><a href=""><img src="../public/uploads/product/'+row.imageName+'" alt=""></a><h4>name: <span>'+row.name+'</span></h4><h4>type: <span>'+row.type+'</span></h4><h4>dose: <span>'+row.dose+'</span></h4><h4>price: <span>TK. '+row.price+' (per pata)</span></h4><h4><a class="cart_minus" href="#" data-id="'+row.id+'" data-price="'+row.price+'"><i class="fas fa-minus"></i></a><a data-id="'+row.id+'" data-price="'+row.price+'" class="cart_plus" href=""><i class="fas fa-plus"></i></a></h4></div></div>'
                 });
                 $('#productLoad').html(showData);
                 cart();

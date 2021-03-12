@@ -33,4 +33,12 @@ class LoginController extends Controller
         $ordername = OrderWithName::where('user_id',Auth::user()->id)->get();
         return view('user.user.dashboard',compact('depts','labs','orders','appointment','services','labReport','orderprescription','ordername'));
     }
+    public function deleteorder($id){
+        $orders = Order::find($id);
+        $orders->products()->delete();
+        $orders->delete();
+        return back();
+    }
+    
+    
 }

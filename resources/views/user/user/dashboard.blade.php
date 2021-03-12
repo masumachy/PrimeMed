@@ -3,7 +3,7 @@
 @section('content')
     <!--banner part start here-->
      <div class="banner-area owl-carousel h-300">
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/appointment/appointment1.jpg);">
+        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/user/user1.jpg);">
             <div class="container h-300">
                 <div class="row h-300">
                     <div class="col-xl-12 h-300">
@@ -40,40 +40,8 @@
                 </div>
             </div>
         </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/banner/slide2.jpg);">
-            <div class="container h-300">
-                <div class="row h-300">
-                    <div class="col-xl-12 h-300">
-                        <div class="banner">
-                            <h4>welcome</h4>
-                            <nav aria-label="breadcrumb" class="text-center">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="single-slide bg h-300" style="background-image: url({{asset('public/user_asset')}}/images/banner/slide3.jpg);">
-            <div class="container h-300">
-                <div class="row h-300">
-                    <div class="col-xl-12 h-300">
-                        <div class="banner">
-                            <h4>welcome</h4>
-                            <nav aria-label="breadcrumb" class="text-center">
-                                <ol class="breadcrumb">
-                                  <li class="breadcrumb-item"><a href="{{action('User\HomeController@index')}}">Home</a></li>
-                                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+        
     </div>
     <!--banner-area part end here-->
     <!--Cart-table area start here-->
@@ -91,7 +59,7 @@
                                       <tr>
                                             <th scope="col">Total price</th>
                                             <th scope="col">status</th>
-                                            <th scope="col">details</th>
+                                            <th scope="col">action</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -99,8 +67,8 @@
                                             <tr>
                                                 <td>{{money($item->paidAmount)}}</td>
                                                 <td>{{$item->orderStatus}}</td>
-                                                <td><a  style="font-size: 12px" href="{{action('User\LoginController@invoice',['id'=>$item->id])}}" class="btn btn-info btn-sm">view</a>
-                                                <a  style="font-size: 12px" href="" class="btn btn-danger">Del</a>
+                                                <td><a  style="font-size: 12px" href="{{action('User\LoginController@invoice',['id'=>$item->id])}}" class="btn btn-info btn-sm"><i class="fas fa-eye"></i></a>
+                                                <a  style="font-size: 12px" href="{{action('User\LoginController@deleteorder',['id'=>$item->id])}}" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -125,6 +93,7 @@
                                             <tr>
                                                 <td>{{$item->patientName}}</td>
                                                 <td>{{$item->status}}</td>
+                                                
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -151,6 +120,7 @@
                                             <tr>
                                                 <td>{{money($item->totalPrice)}}</td>
                                                 <td>{{$item->status}}</td>
+                                                
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -174,6 +144,7 @@
                                             <tr>
                                                 <td>{{money($item->totalPrice)}}</td>
                                                 <td>{{$item->status}}</td>
+                                                
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -200,7 +171,8 @@
                                             <tr>
                                                 <td>{{$item->doctor['name']}}</td>
                                                 <td>{{$item->doctor['specialist']}}</td>
-                                                <td>{{$item->status}}</td>  
+                                                <td>{{$item->status}}</td>
+                                                
                                             </tr>
                                         @endforeach
                                       
@@ -225,6 +197,7 @@
                                             <tr>
                                                 <td>{{$item->services}}</td>
                                                 <td>{{$item->adminSays}}</td>
+                                                
                                             </tr>
                                         @endforeach
                                     </tbody>

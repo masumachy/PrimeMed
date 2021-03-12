@@ -89,6 +89,8 @@ class ProductController extends Controller
         if(file_exists($path)){
             unlink($path);
         }
+        $product->orderItem()->delete();
+        $product->tempOrder()->delete();
         $product->delete();
         return redirect()->to('admin/product-list'); 
     }

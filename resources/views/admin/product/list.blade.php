@@ -69,7 +69,7 @@
                                                 <img width="50" height="50" src="{{asset('public/uploads/product/'.$item->imageName)}}" alt=""></td>
                                                 @endif
                                                 <td class="text-right">
-                                                <a href="{{action('Admin\ProductController@update_product',['id'=>$item->id])}}" class="btn btn-sm btn-primary">Edit</a> || <a onclick="return confirm('are you sure to delete Product?')" href="{{action('Admin\ProductController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Del</a>
+                                                <a href="{{action('Admin\ProductController@update_product',['id'=>$item->id])}}" class="btn btn-sm btn-primary"><i class="material-icons">edit</i></a> || <a onclick="return confirm('are you sure to delete Product?')" href="{{action('Admin\ProductController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger"><i class="material-icons">delete</i></a>
                                             </td>
                                         </tr>
                                         @endforeach

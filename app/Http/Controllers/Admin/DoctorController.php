@@ -30,9 +30,7 @@ class DoctorController extends Controller
             'chamberDetails' => 'required',
             'mobileNo' => 'required',
             'time' => 'required',
-            'description' => 'required',
-            'specialist' => 'required',
-            'imageName' => 'required',          
+            'specialist' => 'required',        
         ]);
         $doctor = new Doctor();
         $doctor->department_id = $request->department_id;
@@ -61,6 +59,7 @@ class DoctorController extends Controller
         if(file_exists($path)){
             unlink($path);
         }
+        $doctor->appointment()->delete();
         $doctor->delete();
         return redirect()->to('admin/doctor-list');
     }
@@ -78,9 +77,7 @@ class DoctorController extends Controller
             'chamberDetails' => 'required',
             'mobileNo' => 'required',
             'time' => 'required',
-            'description' => 'required',
-            'specialist' => 'required',
-            'imageName' => 'required',          
+            'specialist' => 'required',      
         ]);
         $doctor = Doctor::find($request->id);
         $doctor->department_id = $request->department_id;
@@ -107,4 +104,5 @@ class DoctorController extends Controller
         $doctor->save();
         return redirect()->to('admin/doctor-list');
     }
+    
 }

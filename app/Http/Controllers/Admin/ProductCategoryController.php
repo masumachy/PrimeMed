@@ -40,6 +40,7 @@ class ProductCategoryController extends Controller
     }
     public function delete($id){
         $category = ProductCategory::find($id);
+        $category->product()->delete();
         $category->delete();
         return redirect()->to('admin/product-category-list');
     }

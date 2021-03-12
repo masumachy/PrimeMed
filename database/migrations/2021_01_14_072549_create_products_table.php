@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->foreign('product_categories_id')->references('id')->on('product_categories')->onDelete('No Action')->onUpdate('No Action');
             $table->string('name',100);
             $table->string('group',150)->nullable();
-            $table->string('type',20);
+            $table->string('type',50);
             $table->string('quantity',50)->default(0);
             $table->string('piecesPerPata',10)->nullable();
             $table->string('dose',20)->nullable();

@@ -139,11 +139,16 @@
                             
                         </ul>
                     </li>
-                    
                     <li>
                         <a href="{{action('Admin\ServicesController@services_list')}}" class=" waves-effect waves-block">
-                            <i class="material-icons">today</i>
+                            <i class="material-icons">storage</i>
                             <span>Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{action('Admin\UserController@user_table')}}" class=" waves-effect waves-block">
+                            <i class="material-icons">person_outline</i>
+                            <span>User</span>
                         </a>
                     </li>
                     

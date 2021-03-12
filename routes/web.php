@@ -98,7 +98,7 @@ Route::group(['middleware'=>'auth'],function(){
             Route::post('save-lab','Admin\AllLabController@save');
             Route::get('update-lab/{id}','Admin\AllLabController@update_lab');
             Route::post('update-lab','Admin\AllLabController@update');
-            Route::get('delete-lab','Admin\AllLabController@delete');
+            Route::get('delete-lab/{id}','Admin\AllLabController@delete');
             /*----------------------Lab-Info--------------------- */
             Route::get('lab-info-list','Admin\LabInfoController@list');
             Route::get('create-lab-info','Admin\LabInfoController@create_lab_info');
@@ -123,6 +123,10 @@ Route::group(['middleware'=>'auth'],function(){
             Route::get('services-list','Admin\ServicesController@services_list');
             Route::post('update-services','Admin\ServicesController@update');
             Route::get('delete-services/{id}','Admin\ServicesController@delete');
+
+            /*----------------------User Role--------------------- */
+            Route::get('user-list','Admin\UserController@user_table');
+            Route::post('update-user','Admin\UserController@update');
         });
     });
 });
@@ -145,7 +149,6 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('cart-table/delete/{id}','User\OrderCategoryController@cart_delete');
     /*----------------------Laboratory---------------------- */
     Route::get('lab/{id}/{slug}','User\LaboratoryController@lab');
-    
     Route::post('save-lab-report','User\LaboratoryController@save');
     /*----------------------Services---------------------- */
     Route::get('services','User\ServicesController@services');
@@ -157,6 +160,7 @@ Route::group(['middleware'=>'auth'],function(){
     /*----------------------User---------------------- */
     Route::get('invoice/{id}','User\LoginController@invoice');
     Route::get('user-dashboard','User\LoginController@dashboard');
+    Route::get('delete-order/{id}','User\LoginController@deleteorder');
 
     Route::get('blank','User\BlankController@blank');
 

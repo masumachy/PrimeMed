@@ -103,6 +103,7 @@ class OrderCategoryController extends Controller
             $rowData['id'] = $row->id;
             $rowData['name'] = $row->name;
             $rowData['group'] = $row->group;
+            $rowData['type'] = $row->type;
             $rowData['imageName'] = $row->imageName;
             $rowData['dose'] = $row->dose;
             $rowData['picesPerPata'] = $row->picesPerPata;
@@ -121,6 +122,7 @@ class OrderCategoryController extends Controller
             $rowData['id'] = $row->id;
             $rowData['name'] = $row->name;
             $rowData['group'] = $row->group;
+            $rowData['type'] = $row->type;
             $rowData['imageName'] = $row->imageName;
             $rowData['dose'] = $row->dose;
             $rowData['picesPerPata'] = $row->picesPerPata;

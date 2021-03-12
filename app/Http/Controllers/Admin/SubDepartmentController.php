@@ -46,6 +46,7 @@ class SubDepartmentController extends Controller
     }
     public function delete($id){
         $sub_dept = SubDepartment::find($id);
+        $sub_dept->doctor()->delete();
         $sub_dept->delete();
         return redirect()->to('admin/sub-department-list');
     }

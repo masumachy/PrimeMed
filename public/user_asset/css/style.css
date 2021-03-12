@@ -9,6 +9,8 @@
     width: 1140px;
     margin: 0 auto;
 }
+
+
 /*1.common css*/
 html,body{
     height: 100%;
@@ -93,7 +95,7 @@ ul{
 }
 /*2.top part end here*/
 /*3.header-area part start here*/
-.header-area {
+/*.header-area {
     position: fixed;
     color: #ffffff;
     left: 0;
@@ -156,7 +158,7 @@ ul{
     border-radius: 0px 20px;
 }
 /*first level dropdown*/
-.menu ul li ul{
+/*.menu ul li ul{
     position: absolute;
     background-color: #455050;
     width: 220px;
@@ -180,7 +182,7 @@ ul{
     border-bottom: 0;
 }
 /*second level dropdown*/
-.menu ul li ul li ul.second-level{
+/*.menu ul li ul li ul.second-level{
     position: absolute;
     left: 100%;
     top: 50%;
@@ -205,7 +207,7 @@ ul{
     padding-left: 15px;
 }
 /*Burger*/
-.burger div{
+/*.burger div{
     width: 25px;
     height: 5px;
     background-color: #fff;
@@ -213,11 +215,13 @@ ul{
 }
 .burger{
     display: none;
-}
-
+}*/
 
 /*3.header-area part end here*/
-
+.fixed{
+    position: fixed;
+    z-index: 99;
+}
 /*4.Banner-area part start here*/
 .single-slide{
     height: 550px;
@@ -274,8 +278,9 @@ ul{
     visibility: visible;
 }
 .box-btn:hover{
-    color: #06AEAE;
+    color: #223131;
     text-decoration: none;
+    transition: 0.3s;
 }
 .banner-area.owl-carousel .owl-stage-outer {
     height: 100%;
@@ -293,7 +298,7 @@ ul{
     transform: translateY(-50%);
 }
 .banner-area .owl-dots button {
-    background-color: #06AEAE !important;
+    background-color: #17c3c2 !important;
     width: 20px;
     height: 20px;
     display: block;
@@ -305,34 +310,47 @@ ul{
 }
 /*2.Banner-area part end here*/
 /*3.services-area start here*/
-.service-area{
-    background-color: #57caca;
+.single-service {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px #00000017;
+    transition: 0s !important;
+    min-height: 300px;
+}
+
+.single-service:hover {
+    border-radius: 10px !important;
+    transition: 0s !important;
+}
+
+.service-area {
+    background-color: #e9e9e9;
 }
 .section-title{
     text-align: center;
 }
 .section-title h3 {
-    font-size: 40px;
+    font-size: 30px;
+    /* background: #03053d; */
+    border-bottom: 5px solid #17c3c2;
+    display: inline-block;
+    border-radius: 50px;
+    padding: 9px 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
     text-transform: capitalize;
-    color: #fff;
+    color: #03053d !important;
 }
-.single-service {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 0px 130px;
-    transition: .6s;
-    margin-top: 20px;
-}
-.single-service:hover{
-    border-radius: 130px 0px;
-}
+
 .single-service a {
     display: block;
     text-align: center;
 }
+
 .single-service a i {
     font-size: 50px;
-    color: #06AEAE;
+    color: #17c3c2;
     padding: 15px 0;
 }
 .single-service h4 {
@@ -343,7 +361,7 @@ ul{
 }
 .single-service h4 span {
     display: block;
-    color: #DA4A54;
+    color: #03053d;
     padding-top: 10px;
     font-size: 30px;
     font-weight: 700;
@@ -360,23 +378,25 @@ ul{
     padding: 5px 10px;
     font-size: 20px;
 }
+
 .single-service .service-link::before {
     content: "chat now";
     top: 12px;
-    left: 70px;
+    left: 80px;
     height: 65%;
     width: 50%;
     position: absolute;
     z-index: 2;
     transition: .3s;
-    font-size: 19px;
+    font-size: 20px;
     text-transform: capitalize;
-    background-color: #06AEAE;
-    padding: 10px 15px;
-    border-radius: 20px;
+    background-color: #17c3c2;
+    padding: 12px 10px;
+    border-radius: 10px;
     color: #fff;
+    font-size: 16px;
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     text-align: center;
     visibility: hidden;
 }
@@ -398,19 +418,23 @@ ul{
     transition: .5s;
     overflow: hidden;
 }
-.single-blog h4 {
-    font-size: 25px;
-    text-transform: capitalize;
-}
-.single-blog h4 span {
-    color: #DA4A54;
-    display: block;
-}
+
 .single-blog a {
     text-transform: capitalize;
     font-size: 16px;
     display: inline-block;
     margin: 5px auto;
+}
+.single-blog h4 {
+    font-size: 25px;
+    padding-top: 15px;
+    text-transform: capitalize;
+}
+.single-blog h4 span {
+    color: #7a7979;
+    font-weight: 700;
+    padding: 6px 0px;
+    display: block;
 }
 .single-blog::before {
     left: 0;
@@ -432,13 +456,15 @@ ul{
 /*5.team-area start here*/
 .team-area{
     background-color: #D1F2EB;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
 }
 .single-team{
     position: relative;
     text-align: center;
     margin: 40px 0px;
 }
-.single-team::before{
+.single-team::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -446,28 +472,30 @@ ul{
     left: 0;
     top: 0;
     opacity: 0;
-    background-color: #333;
+    background-color: #03053d;
     transition: .5s;
 }
-.single-team:hover::before{
+.single-team:hover::before {
     height: 100%;
     opacity: .7;
     transition: .5s;
-    transform: scale(1) rotate(360deg);
+    transform: scale(1) rotate( 180deg);
 }
 .single-team img {
     width: 100%;
     vertical-align: middle; 
 }
-.team-hover{
+.team-hover {
     position: absolute;
     width: 80%;
-    background-color: #06AEAE;
+    background-color: #03053d;
     border-radius: 7px;
+    padding: 15px 0px;
     left: 50%;
+    min-height: 150px;
     bottom: -50px;
     transform: translateX(-50%);
-    box-shadow: 0 5px 20px -5px #cccccc;
+    box-shadow: 1px 1px 10px -5px #00000063;
     transition: .3s;
 }
 .team-social{
@@ -475,11 +503,11 @@ ul{
     opacity: 0;
     display: none;
 }
-.team-social a{
-    color: #333;
-    border: 1px solid #ddd;
+.team-social a {
+    color: #17c3c2;
     width: 30px;
     height: 30px;
+    border: 0px !important;
     line-height: 30px;
     border-radius: 50%;
     margin: 0 5px;
@@ -487,15 +515,14 @@ ul{
     transition: .3s;
 }
 .team-social a:hover{
-    border-color: #06AEAE;
-    background-color: #06AEAE;
     color: #fff;
 }
-.single-team:hover .team-hover{
+.single-team:hover .team-hover {
     bottom: 20px;
     bottom: 20px;
-    background-color: #fff;
-    color:  #06AEAE;
+    box-shadow: 0 0 20px 2px #2be7795c;
+    background-color: #03053d;
+    color: #ffffff;
 }
 .single-team:hover .team-social{
     display: block;
@@ -506,11 +533,16 @@ ul{
 .team-hover h4{
     font-size: 25px;
     text-transform: capitalize;
+    color: #17c3c2;
     text-align: center;
+    height: 100%;
 }
-.team-hover span{
+.team-hover span {
     display: block;
-    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    padding-top: 16px;
+    font-size: 16px;
     text-transform: lowercase;
 }
 /*5.team-area end here*/
@@ -1219,4 +1251,230 @@ button.btn {
     line-height: 50px;
     font-size: 20px;
     border-radius: 50%;
+}
+
+
+/*redesign nav bar*/
+
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+    width: 100%;
+}
+
+.navbar.navbar-expand-lg {
+    width: 100%;
+}
+
+.navbar.navbar-expand-lg {
+    width: 100%;
+}
+
+.navbar-brand {
+    color: #0ff;
+    font-weight: bold;
+}
+
+.dropmenu {
+    position: absolute;
+    background: #00000075;
+    padding: 10px 10px;
+    font-size: 14px !important;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.nav-link.dropdown-toggle {
+    position: relative;
+}
+
+#navbarNavDropdown {
+    color: #17c3c2;
+}
+
+.navbar-nav {
+    color: azure;
+}
+
+.nav-item a {
+    color: white;
+    font-weight: bold;
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+.nav-link.dropdown-toggle:hover.dropmenu {
+    opacity: 100%;
+    visibility: visible;
+}
+
+.dropmenu li {
+    display: block ruby;
+}
+
+ul.dropmenu li a {
+    font-size: 16px;
+    font-weight: unset;
+}
+
+.dropmenu li a:hover {
+    border-left: 3px solid #1dd0d1;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.navbar-brand:hover {
+    color: #06aeae;
+}
+
+.nav-item:hover {
+    border-bottom: 2px solid #17c3c2;
+}
+
+/*-edit nav-start*/
+
+.top-menu {
+    background: #03053d;
+}
+
+.nav-item:hover {
+    border-bottom: 0px solid #17c3c2 !important;
+}
+
+a.navbar-brand img {
+    max-width: 50px;
+}
+
+li.nav-item a {
+    color: white !important;
+}
+
+li.nav-item a:hover {
+    color: #17c3c2 !important;
+}
+
+ul.dropdown-menu.show {
+    background: #03053d;
+    box-shadow: 0 0 9px #06060652;
+    border: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+ul.dropdown-menu.show li {
+    border-bottom: 1px solid #1f1f21;
+}
+
+ul.dropdown-menu.show li a {
+    font-size: 14px;
+}
+
+ul.dropdown-menu.show li a:hover {
+    background: none !important;
+}
+
+li.nav-item {
+    margin: 0 8px;
+    text-transform: capitalize;
+}
+
+li.nav-item a {
+    font-size: 18px;
+}
+
+nav.navbar.navbar-light.bg-color {
+    background: #17c3c2;
+}
+
+a.contact {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: system-ui;
+}
+
+a.contact i {
+    margin-right: 10px;
+}
+
+a.email {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+a.email i {
+    margin-right: 10px;
+}
+
+a.email:hover {
+    background: none;
+    text-shadow: 0px 5px 10px #0ca24a;
+}
+
+a.contact:hover {
+    background: none;
+    text-shadow: 0px 5px 10px #0ca24a;
+}
+
+button.navbar-toggler.collapsed {
+    border: 0px;
+    color: #2be779 !important;
+}
+
+.navbar-dark .navbar-toggler {
+    color: #2be779;
+    border: 0px;
+}
+
+.single-service h4 {
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #7a7979;
+}
+
+/**/
+
+ul.dropdown-menu.show li ul li {
+    display: block ruby;
+    min-width: 200px;
+    background: #03053d;
+    display: grid !important;
+}
+ul.navbar-nav li ul li a {
+    position: relative;
+}
+
+ul.dropdown-menu.show li ul {
+    background: #03053d;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 0 5px #ffffff42;
+    visibility: hidden;
+    border-left: 1px solid #17c3c2;
+    left: 110%;
+    opacity: 0;
+}
+
+ul.dropdown-menu.show li ul li a {
+    padding: 0px 0px;
+    border-bottom: 1px solid #1f1f21;
+    text-decoration: none;
+}
+ul.dropdown-menu.show li {
+    transition: 0.3s;
+    position: relative;
+}
+
+ul.dropdown-menu.show li:hover>ul {
+    transition: 0.3s;
+    left: 100% !important;
+    visibility: visible;
+    opacity: 100;
+    top: 0;
+    padding: 0px 5px;
+}
+ul.dropdown-menu.show li>active a {
+    color: #2be779;
 }

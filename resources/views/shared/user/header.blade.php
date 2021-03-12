@@ -15,67 +15,97 @@
 </nav>
 <!--top part end here-->
 <!--header part start here-->
-<header class="header-area">
-    <div class="container">
-            <div class="row header">
-                <div class="col-md-2">
-                    <nav class="logo">
-                        <a class="navbar-brand" href="{{action('User\HomeController@index')}}">prime<span>med</span></a>
-                    </nav>
-                </div>
-                <div class="col-md-10">
-                    <nav class="menu">
-                        <ul>
-                            <li><a href="{{action('User\HomeController@index')}}">home</a></li>
-                            <li><a href="#">appointment <i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    @foreach($depts as $dept)
-                                        <li><a href="@if(count($dept->sub_department) > 0) # @else {{action('User\DoctorController@dept_wise',['id' => $dept->id,'slug' => $dept->slug])}} @endif">{{$dept->dept_Name}} 
-                                            @if(count($dept->sub_department) > 0) <i class="fas fa-caret-right"></i> @endif</a>
-                                                @if(count($dept->sub_department) > 0)
-                                                <ul class="second-level">
+<header class="">
+    <div class="container-fluid p-0 ">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="{{action('User\HomeController@index')}}"><img src="{{asset('public/user_asset')}}/images/logo/4.png" alt=""></span>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="{{action('User\HomeController@index')}}">Home</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            appointment
+                                        </a>
+                                        
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            @foreach($depts as $dept)
+                                            <li><a class="dropdown-item" href="@if(count($dept->sub_department) > 0) # @else {{action('User\DoctorController@dept_wise',['id' => $dept->id,'slug' => $dept->slug])}} @endif">{{$dept->dept_Name}}
+                                                @if(count($dept->sub_department) > 0) @endif
+                                            </a>
+                                            @if(count($dept->sub_department) > 0)
+                                                <ul>
                                                     @foreach($dept->sub_department as $sub_dept)
-                                                        <li><a href="{{action('User\DoctorController@sub_dept_wise',['id' => $sub_dept->id,'slug' => $sub_dept->slug])}}">{{$sub_dept->sub_Dept_Name}}</a></li>
+                                                    <li>
+                                                        <a href="{{action('User\DoctorController@sub_dept_wise',['id' => $sub_dept->id,'slug' => $sub_dept->slug])}}">{{$sub_dept->sub_Dept_Name}}</a>
+                                                    </li>
                                                     @endforeach
                                                 </ul>
-                                                @endif
-                                        </li>             
-                                    @endforeach
+                                            @endif
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{action('User\OrderCategoryController@order_category')}}">shop</a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            lab info
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            @foreach ($labs as $item)
+                                            <li><a class="dropdown-item" href="{{action('User\LaboratoryController@lab',['id'=>$item->id,'slug' => $item->slug])}}">{{$item->name}}</a>
+                                                
+                                            </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{action('User\ServicesController@services')}}">services</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{action('User\ContactController@contact')}}">contact</a>
+                                    </li>
+                                    @if (isset(Auth::user()->email))
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="far fa-user"></i> {{Auth::user()->name}}
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            
+                                            <li><a class="dropdown-item" href="{{action('User\LoginController@dashboard')}}"><i class="far fa-user"></i> your profile</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> logout</a></li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                        </ul>
+                                    </li>
+                                    @else
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('login')}}">Login</a>
+                                    </li>
+                                    @endif
                                 </ul>
-                            </li>
-                            <li><a href="{{action('User\OrderCategoryController@order_category')}}">shop</a>
-                            </li>
-                            <li><a href="#">lab info <i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    @foreach ($labs as $item)
-                                    <li><a href="{{action('User\LaboratoryController@lab',['id'=>$item->id,'slug' => $item->slug])}}">{{$item->name}}</a></li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                            <li><a href="{{action('User\ServicesController@services')}}">services</a>
-                                
-                            </li>
-                            <li><a href="{{action('User\ContactController@contact')}}">contact</a></li>
-                            
-                            @if (isset(Auth::user()->email))
-                            <li><a href="#"><i class="far fa-user"></i> {{Auth::user()->name}} <i class="fas fa-chevron-down"></i></a>
-                                <ul>
-                                    <li><a href="{{action('User\LoginController@dashboard')}}"><i class="far fa-user"></i> your profile</a></li>
-                                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> logout</a></li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </ul>
-                            </li>
-                            @else
-                            <li><a href="{{route('login')}}">Login</a></li>
-                            @endif
-                        </ul>
-                        
-                    </nav>                  
+                            </div>
+                        </div>
+                    </nav>
                 </div>
             </div>
+        </div>
+
     </div>
+
 </header>
 <!--header part end here-->

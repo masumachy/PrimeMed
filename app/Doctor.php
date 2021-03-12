@@ -11,9 +11,9 @@ class Doctor extends Model
        return $this->belongsTo('App\Department','department_id');
     }
     public function sub_department(){
-        return $this->belongsTo('App\Department','sub_department_id');
+        return $this->belongsTo('App\SubDepartment','sub_department_id');
     }
     public function appointment(){
-        return $this->hasMany('App\Appointment');
+        return $this->hasMany('App\Appointment','doctor_id');
     }
 }

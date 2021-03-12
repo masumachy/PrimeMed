@@ -11,6 +11,6 @@ class LabInfo extends Model
         return $this->belongsTo('App\AllLab','all_lab_id');
     }
     public function sublabinfo(){
-        return $this->hasMany('App\SubLabInfo');
+        return $this->hasMany('App\SubLabInfo','lab_info_id');
     }
 }

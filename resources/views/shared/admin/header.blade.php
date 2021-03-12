@@ -3,7 +3,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars" style="display: none;"></a>
-                <a class="navbar-brand" href="{{action('Admin\DashboardController@index')}}">PrimeMed</a>
+                <a class="navbar-brand" href="{{action('Admin\DashboardController@index')}}"><img width="35px" height="35px" src="{{asset('public/admin_asset')}}/images/logo/2.png" alt=""></a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">

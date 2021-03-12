@@ -18,7 +18,7 @@ class AppointmentController extends Controller
         return redirect()->to('admin/appointment-list');
     }
     public function checked_list(){
-        $appointment = Appointment::where('status','checked')->get();
+        $appointment = Appointment::where('status','check')->get();
         return view('admin.appointment.checked_list',compact('appointment'));
     }
     public function check($id)

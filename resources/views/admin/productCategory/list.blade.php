@@ -49,7 +49,7 @@
                                             <td>{{$item->name}}</td>
                                             <td>{{$item->description}}</td>
                                             <td class="text-right">
-                                                <a href="{{action('Admin\ProductCategoryController@update_product_category',['id'=>$item->id])}}" class="btn btn-sm btn-primary">Edit</a> || <a onclick="return confirm('are you sure to delete Product Category?')" href="{{action('Admin\ProductCategoryController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger">Delete</a>
+                                                <a href="{{action('Admin\ProductCategoryController@update_product_category',['id'=>$item->id])}}" class="btn btn-sm btn-primary"><i class="material-icons">edit</i></a> || <a onclick="return confirm('are you sure to delete Product Category?')" href="{{action('Admin\ProductCategoryController@delete',['id'=>$item->id])}}" class="btn btn-sm btn-danger"><i class="material-icons">delete</i></a>
                                             </td>
                                         </tr>
                                         @endforeach

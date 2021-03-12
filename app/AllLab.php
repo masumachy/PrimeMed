@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class AllLab extends Model
 {
     protected $table = 'all_labs';
-    public function labinfo(){
-       return $this->hasMany('App\LabInfo');
+    public function lab_info(){
+       return $this->hasMany('App\LabInfo','all_lab_id');
     }
-    public function sublabinfo(){
-        return $this->hasMany('App\SubLabInfo');
+    public function sub_lab_info(){
+        return $this->hasMany('App\SubLabInfo','all_lab_id');
     }
 }

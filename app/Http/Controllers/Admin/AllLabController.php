@@ -50,6 +50,8 @@ class AllLabController extends Controller
     }
     public function delete($id){
         $lab = AllLab::find($id);
+        $lab->lab_info()->delete();
+        $lab->sub_lab_info()->delete();
         $lab->delete();
         return redirect()->to('admin/all-lab-list');
     }

@@ -47,6 +47,7 @@ class LabInfoController extends Controller
     }
     public function delete($id){
         $labinfo = LabInfo::find($id);
+        $labinfo->sublabinfo()->delete();
         $labinfo->delete();
         return redirect()->to('admin/lab-info-list');
     }

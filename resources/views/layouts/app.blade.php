@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="{{asset('public/css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background-image: url('public/images/login.jpg')">
+<body style="background-image: url('public/images/login.jpg');">
     <div id="app">
 
         <main class="py-4" style="margin-top: 14rem;">

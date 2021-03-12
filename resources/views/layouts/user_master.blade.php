@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('public/user_asset')}}/images/logo/4.png">
     <title>PrimeMed || @yield('title')</title>
     <link rel="stylesheet" href="{{asset('public/user_asset')}}/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('public/user_asset')}}/css/bootstrap.min.css">

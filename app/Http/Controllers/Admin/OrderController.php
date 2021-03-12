@@ -51,6 +51,7 @@ class OrderController extends Controller
     }
     public function deleteCart($id){
         $order = Order::find($id);
+        $order->products()->delete();
         $order->delete();
         return redirect()->to('admin/order-with-cart');
     }
