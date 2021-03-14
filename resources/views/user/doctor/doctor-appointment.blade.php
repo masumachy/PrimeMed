@@ -48,7 +48,10 @@
             <div class="row  form-instruction">
                 <div class="col-md-6">
                     <div class="doctor-details text-center">
-                        <img src="{{asset('public/user_asset')}}/images/medicine/dr.jpg" alt="">
+                        @if ($appointment->imageName=='default.jpg')<img src="{{asset('public/uploads/default.jpg')}}" alt="">
+                        @else
+                            <img  src="{{asset('public/uploads/doctor/'.$appointment->imageName)}}" alt="">
+                        @endif
                         <p><span>name:</span>{{$appointment->name}}</p>
                         <p><span>degrees:</span>{{$appointment->degrees}}</p>
                         <p><span>chamber details:</span>{{$appointment->chamberDetails}}</p>

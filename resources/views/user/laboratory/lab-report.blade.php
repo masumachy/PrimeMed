@@ -53,7 +53,7 @@
                         <span>welcome to report delivery page</span>
                         <p>only 60tk delivery charge in sylhet</p>
                         <p>if you give your full payment then just give delivery charge and take report.
-                             But if you have due then please your due payment give with delivery charge when you take report. 
+                            But clear the due payment with delivery charge if the due is not cleared
                             you can pay by bKash. BKash No is: 0178000000</p>
                     </div>
                     

@@ -330,7 +330,7 @@ ul{
 .section-title{
     text-align: center;
 }
-.section-title h3 {
+.section-title h3{
     font-size: 30px;
     /* background: #03053d; */
     border-bottom: 5px solid #17c3c2;
@@ -904,6 +904,7 @@ ul{
     font-style: italic;
     margin-bottom: 40px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 .single-service-part h2{
     text-align: center;

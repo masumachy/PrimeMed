@@ -11,14 +11,9 @@ class AppointmentController extends Controller
         $appointment = Appointment::where('status','unchecked')->get();
         return view('admin.appointment.list',compact('appointment'));
     }
-    public function update(Request $request){
-        $appointment = Appointment::find($request->id);
-        $appointment->status = $request->status;
-        $appointment->save();
-        return redirect()->to('admin/appointment-list');
-    }
+    
     public function checked_list(){
-        $appointment = Appointment::where('status','check')->get();
+        $appointment = Appointment::paginate(10);
         return view('admin.appointment.checked_list',compact('appointment'));
     }
     public function check($id)
@@ -29,6 +24,12 @@ class AppointmentController extends Controller
             $appointment->status = 'checked';
             $appointment->save();
         }
+        return redirect()->back();
+    }
+    public function update(Request $request){
+        $appointment = Appointment::find($request->id);
+        $appointment->status = $request->status;
+        $appointment->save();
         return redirect()->back();
     }
     public function delete($id){

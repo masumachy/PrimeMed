@@ -9,7 +9,7 @@
                     <div class="col-md-12 h-500">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
+                            <h2>Best of Care, Close to Home</h2>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                     <div class="col-md-12 h-500">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
+                            <h2>Best of Care, Close to Home</h2>
                         </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="col-md-12 h-500">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
+                            <h2>Best of Care, Close to Home</h2>
                         </div>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="col-md-12 h-500">
                         <div class="banner">
                             <h4>welcome</h4>
-                            <h2>gain the beautiful</h2>
+                            <h2>Best of Care, Close to Home</h2>
                         </div>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
         <div class="container">
             <div class="services">
                 <div class="section-title pb-30">
-                    <h3>our services</h3>
+                    <h3>our blogs</h3>
                 </div>
                 <div class="row">
                     <div class="col-md-4 col-sm-12">
@@ -93,7 +93,7 @@
         <div class="container">
             <div class="blog">
                 <div class="section-title blog-content pb-30">
-                    <h3>our blogs</h3>
+                    <h3>our services</h3>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6"> 
@@ -171,8 +171,8 @@
                             <div class="team-hover">
                                 <h4>ummeh honey khan meem <span>web developer</span></h4>
                                 <div class="team-social">
-                                    <a href=""><i class="fab fa-facebook"></i></a>
-                                    <a href=""><i class="fas fa-envelope-square"></i></a>
+                                    <a href="https://www.facebook.com/hi2meem"><i class="fab fa-facebook"></i></a>
+                                    <a href="ummehhoney08@gmail.com"><i class="fas fa-envelope-square"></i></a>
                                     <a href=""><i class="fab fa-linkedin"></i></a>
                                     <a href=""><i class="fab fa-twitter-square"></i></a>
                                 </div>
@@ -185,8 +185,8 @@
                             <div class="team-hover">
                                 <h4>nyeema islam mumu <span>web designer</span></h4>
                                 <div class="team-social">
-                                    <a href=""><i class="fab fa-facebook"></i></a>
-                                    <a href=""><i class="fas fa-envelope-square"></i></a>
+                                    <a href="https://www.facebook.com/anisha.ahmed.146"><i class="fab fa-facebook"></i></a>
+                                    <a href="nyeemamumu@gmail.com"><i class="fas fa-envelope-square"></i></a>
                                     <a href=""><i class="fab fa-linkedin"></i></a>
                                     <a href=""><i class="fab fa-twitter-square"></i></a>
                                 </div>

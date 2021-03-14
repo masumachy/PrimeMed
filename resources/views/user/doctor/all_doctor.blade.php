@@ -52,7 +52,10 @@
                     @foreach ($doctors as $doctor)
                     <div class="col-xl-4">
                         <div class="single-medicine single-appointment">
-                            <img src="{{asset('public/user_asset')}}/images/medicine/dr.jpg" alt="">
+                            @if ($doctor->imageName=='default.jpg')<img src="{{asset('public/uploads/default.jpg')}}" alt="">
+                            @else
+                                <img  src="{{asset('public/uploads/doctor/'.$doctor->imageName)}}" alt="">
+                            @endif
                             <p><span>name:</span>{{$doctor->name}}</p>
                             <p><span>specialist:</span>{{$doctor->specialist}}</p>
                             <p><span>degrees:</span>{{$doctor->degrees}}</p>
